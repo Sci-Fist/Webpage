@@ -19,14 +19,15 @@ Ich bin ein Koch, der sich auf [Ort einfügen] auf Mietkoch-Basis spezialisiert 
 
 **Technologien:**
 
-Diese Website wurde mit HTML, CSS und JavaScript erstellt.
+Diese Website wurde mit HTML, CSS und JavaScript erstellt.  Ein Build-Prozess wird verwendet, um optimierte Dateien zu generieren.
 
 
 **Deployment:**
 
 1. Klonen Sie dieses Repository: `git clone [Repository-URL]`
 2. Navigieren Sie in das Verzeichnis: `cd [Verzeichnisname]`
-3. Pushen Sie die Änderungen an Ihr GitHub Repository: `git push origin main`
-4. Konfigurieren Sie in den Einstellungen Ihres GitHub Repositorys GitHub Pages, um den `main` Branch zu verwenden.
+3. Führen Sie den Build-Prozess aus:  `[Befehl zum Ausführen des Build-Prozesses]`
+4. Pushen Sie die Änderungen an Ihr GitHub Repository: `git push origin main`
+5. Konfigurieren Sie in den Einstellungen Ihres GitHub Repositorys GitHub Pages, um den `main` Branch zu verwenden (und den Build-Ordner als Root-Ordner zu setzen).
 
 
