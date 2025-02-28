@@ -1,0 +1,11 @@
+/* Darkmode Styles */
+body.dark-mode {
+  background-color: #222;
+  color: #eee;
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3 {
+  color: #fff;
+}
+
+/* Weitere Styles für Darkmode hinzufügen */
