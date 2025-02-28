@@ -1,9 +1,9 @@
-# My GitHub Pages Site
+# Meine GitHub Pages Website
 
-This is a simple website built for GitHub Pages. It uses HTML, CSS, and JavaScript.
+Diese Website wurde mit HTML, CSS und JavaScript erstellt.  Sie bietet [füge hier kurze Beschreibung der Website-Funktionalität ein, z.B.  "Informationen zu meinen Projekten" oder "ein Portfolio meiner Arbeiten"].
 
-To deploy this site:
+**Deployment:**
 
-1. Clone this repository.
-2. Push the changes to your GitHub repository.
-3. Go to your GitHub repository settings and configure GitHub Pages to use the `main` branch.
+1. Klonen Sie dieses Repository.
+2. Pushen Sie die Änderungen an Ihr GitHub Repository.
+3. Konfigurieren Sie in den Einstellungen Ihres GitHub Repositorys GitHub Pages, um den `main` Branch zu verwenden.
