@@ -26,8 +26,8 @@ Diese Website wurde mit HTML, CSS und JavaScript erstellt.  Ein Build-Prozess wi
 
 1. Klonen Sie dieses Repository: `git clone [Repository-URL]`
 2. Navigieren Sie in das Verzeichnis: `cd [Verzeichnisname]`
-3. Führen Sie den Build-Prozess aus:  `[Befehl zum Ausführen des Build-Prozesses]`
+3. Kopieren Sie die Dateien aus dem `src` Ordner in den `docs` Ordner: `cp -r src/* docs/`
 4. Pushen Sie die Änderungen an Ihr GitHub Repository: `git push origin main`
-5. Konfigurieren Sie in den Einstellungen Ihres GitHub Repositorys GitHub Pages, um den `main` Branch zu verwenden (und den Build-Ordner als Root-Ordner zu setzen).
+5. Konfigurieren Sie in den Einstellungen Ihres GitHub Repositorys GitHub Pages, um den `main` Branch zu verwenden (und den `docs` Ordner als Root-Ordner zu setzen).
 
 
