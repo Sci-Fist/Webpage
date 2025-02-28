@@ -1,15 +1,15 @@
 body {
-    font-family: 'Lora', serif; /* Consider a serif font for elegance */
+    font-family: 'Lora', serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
     background-color: #1e1e1e; /* Dark background */
     color: #eee; /* Light text color */
-    transition: background-color 0.3s ease; /* Smooth transition for dark mode */
+    transition: background-color 0.3s ease;
 }
 
 header {
-    background-color: #282828; /* Slightly darker header */
+    background-color: #282828;
     padding: 2rem;
     text-align: center;
 }
@@ -18,11 +18,11 @@ nav a {
     margin: 0 1rem;
     text-decoration: none;
     color: #eee;
-    transition: color 0.3s ease; /* Smooth transition for link hover */
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #bada55; /* A nice, contrasting color */
+    color: #bada55;
 }
 
 main {
@@ -35,7 +35,7 @@ section {
 }
 
 h1, h2 {
-    font-weight: 700; /* Bold headings */
+    font-weight: 700;
     margin-bottom: 1rem;
 }
 
@@ -57,9 +57,9 @@ h2 {
     background-color: #333;
     border: 1px solid #444;
     padding: 2rem;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animations */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .portfolio-item:hover, .blog-post:hover {
@@ -80,9 +80,8 @@ footer {
     text-align: center;
 }
 
-/* Optional: Add a media query for responsiveness */
 @media (max-width: 768px) {
     .portfolio-grid, .blog-grid {
-        grid-template-columns: 1fr; /* Stack items vertically on smaller screens */
+        grid-template-columns: 1fr;
     }
 }
