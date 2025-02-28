@@ -3,57 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine Koch-Website</title>
+    <title>Mein Koch-Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">  <!-- Added Google Font -->
 </head>
 <body>
     <header>
+        <h1>Mein Koch-Portfolio</h1>
         <nav>
-            <ul>
-                <li><a href="#">Startseite</a></li>
-                <li><a href="#about">Über Mich</a></li>
-                <li><a href="#menus">Menüs</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#">Kontakt</a></li>
-            </ul>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#blog">Blog</a>
+            <a href="#kontakt">Kontakt</a>
         </nav>
-        <h1>Willkommen auf meiner Koch-Website</h1>
     </header>
+
     <main>
-        <section id="about">
-            <h2>Über Mich</h2>
-            <p>Hier können Sie mehr über mich und meine Leidenschaft für das Kochen erfahren. Ich bin ein erfahrener Koch mit einer Liebe zu frischen, regionalen Zutaten. Meine Spezialität ist die kreative Zubereitung saisonaler Gerichte.</p>
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <div class="portfolio-grid">
+                <!-- Add your portfolio entries here -->
+                <div class="portfolio-item">
+                    <img src="placeholder-image1.jpg" alt="Bild von Menü 1">
+                    <h3>Menü 1: [Menüname]</h3>
+                    <p>Kurze Beschreibung von Menü 1</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="placeholder-image2.jpg" alt="Bild von Menü 2">
+                    <h3>Menü 2: [Menüname]</h3>
+                    <p>Kurze Beschreibung von Menü 2</p>
+                </div>
+                <!-- Add more portfolio items -->
+            </div>
         </section>
-        <section id="menus">
-            <h2>Meine Menüs</h2>
-            <p>Hier finden Sie eine Auswahl meiner kreativen Menüs, die perfekt für Ihre nächste Veranstaltung geeignet sind. Ich biete sowohl klassische als auch moderne Gerichte an und kann auch auf Ihre individuellen Wünsche eingehen.</p>
-            <ul>
-                <li><a href="#">Menü 1: Klassische Küche</a></li>
-                <li><a href="#">Menü 2: Moderne Gerichte</a></li>
-                <li><a href="#">Menü 3: Vegetarisches Menü</a></li>
-            </ul>
-        </section>
+
         <section id="blog">
             <h2>Blog</h2>
-            <p>Hier finden Sie meine neuesten Blogbeiträge mit Rezepten, Tipps und Tricks rund ums Kochen.</p>
-            <article>
-                <h3><a href="#">Blogbeitrag 1: Rezept für selbstgemachte Pasta</a></h3>
-                <p>Ein ausführliches Rezept für selbstgemachte Pasta, inklusive Tipps und Tricks für den perfekten Teig.</p>
-            </article>
-            <article>
-                <h3><a href="#">Blogbeitrag 2: Tipps für perfekte Bratkartoffeln</a></h3>
-                <p>Erfahren Sie, wie Sie knusprige und perfekt gewürzte Bratkartoffeln zubereiten.</p>
-            </article>
-            <article>
-                <h3><a href="#">Blogbeitrag 3: Mein Lieblingsgericht: Omas Apfelkuchen</a></h3>
-                <p>Ein traditionelles Rezept für einen leckeren Apfelkuchen, wie ihn meine Oma immer gebacken hat.</p>
-            </article>
+            <div class="blog-grid">
+                <!-- Add your blog posts here -->
+                <div class="blog-post">
+                    <h3>Blogbeitrag 1: [Titel]</h3>
+                    <p>Kurze Zusammenfassung des Blogbeitrags 1</p>
+                    <a href="blog-post1.html">Weiterlesen</a>
+                </div>
+                <!-- Add more blog posts -->
+            </div>
+        </section>
+
+        <section id="kontakt">
+            <h2>Kontakt</h2>
+            <p>Ihre Kontaktdaten hier</p>
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2024 Mein Name</p>
+        <p>&copy; 2024 Ihr Name</p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>
