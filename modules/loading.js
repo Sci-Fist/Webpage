@@ -2,7 +2,7 @@ export const handleLoadingIndicator = () => {
     const loadingIndicator = document.getElementById('loading-indicator');
     if (!loadingIndicator) {
         console.error('Loading indicator element not found!');
-        return; // Exit early if the element is missing
+        return;
     }
 
     try {

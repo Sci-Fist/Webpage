@@ -5,35 +5,36 @@ export const handleFormSubmission = () => {
     const emailInput = document.getElementById('email');
     const messageInput = document.getElementById('message');
 
+    const validateInput = (input, validationFn, errorMessage) => {
+        const value = input.value.trim();
+        if (!validationFn(value)) {
+            displayFormMessage(errorMessage, 'error', input);
+            return false;
+        }
+        return true;
+    };
+
     contactForm.addEventListener('submit', async (event) => {
         event.preventDefault();
+        formMessage.textContent = '';
+        formMessage.classList.remove('success', 'error');
+        nameInput.classList.remove('error');
+        emailInput.classList.remove('error');
+        messageInput.classList.remove('error');
+
         const name = nameInput.value.trim();
         const email = emailInput.value.trim();
         const message = messageInput.value.trim();
+
         let isValid = true;
 
-        // Input validation with more specific error messages
-        if (name === '') {
-            displayFormMessage('Bitte geben Sie Ihren Namen ein.', 'error', nameInput);
-            isValid = false;
-        }
-        if (email === '' || !isValidEmail(email)) {
-            displayFormMessage('Bitte geben Sie eine gültige E-Mail-Adresse ein.', 'error', emailInput);
-            isValid = false;
-        }
-        if (message === '' || message.length < 10) {
-            displayFormMessage('Bitte geben Sie eine Nachricht mit mindestens 10 Zeichen ein.', 'error', messageInput);
-            isValid = false;
-        }
-        if (message.length > 500) {
-            displayFormMessage('Ihre Nachricht darf maximal 500 Zeichen lang sein.', 'error', messageInput);
-            isValid = false;
-        }
-
+        isValid = validateInput(nameInput, (value) => value !== '', 'Bitte geben Sie Ihren Namen ein.') && isValid;
+        isValid = validateInput(emailInput, (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value), 'Bitte geben Sie eine gültige E-Mail-Adresse ein.') && isValid;
+        isValid = validateInput(messageInput, (value) => value.length >= 10 && value.length <= 500, 'Bitte geben Sie eine Nachricht zwischen 10 und 500 Zeichen ein.') && isValid;
 
         if (isValid) {
             try {
-                const response = await fetch('/submit', { // **REPLACE /submit WITH YOUR ACTUAL ENDPOINT**
+                const response = await fetch('/submit', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -56,6 +57,7 @@ export const handleFormSubmission = () => {
 
                 const data = await response.json();
                 displayFormMessage(data.message || 'Formular erfolgreich abgesendet!', 'success');
+                contactForm.reset();
             } catch (error) {
                 displayFormMessage('Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal.', 'error');
                 console.error('Error:', error);
@@ -67,17 +69,15 @@ export const handleFormSubmission = () => {
         formMessage.textContent = message;
         formMessage.classList.remove('success', 'error');
         formMessage.classList.add(type);
-        formMessage.setAttribute('role', 'alert'); // ARIA attribute for accessibility
+        formMessage.setAttribute('role', 'alert');
+
         if (inputField) {
-            inputField.classList.add('error'); // Add error class to input field
+            inputField.classList.add('error');
+            inputField.focus();
             inputField.addEventListener('input', () => {
-                inputField.classList.remove('error'); // Remove error class on input
-                formMessage.textContent = ''; // Clear message
+                inputField.classList.remove('error');
+                formMessage.textContent = '';
             });
         }
     };
-
-    function isValidEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
 };

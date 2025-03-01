@@ -8,12 +8,12 @@
     <title>Culinaut Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="loading-indicator">Loading...</div>  <!-- Moved to the top of the body -->
+    <div id="loading-indicator">Loading...</div>
 
     <nav>
         <div class="nav-container">
@@ -43,22 +43,18 @@
         <section id="portfolio" class="animated-element">
             <h2>Portfolio</h2>
             <div class="portfolio-grid">
-                <!-- Example Portfolio Item (can be repeated) -->
                 <div class="portfolio-item animated-element">
-                    <img src="assets/placeholder.jpg" alt="Dish Name" data-tooltip-content="This is a delicious dish.">
+                    <img src="assets/placeholder.jpg" alt="Delicious Dish" loading="lazy">
                 </div>
-
                 <div class="portfolio-item animated-element">
-                    <img src="assets/nonexistent.jpg" alt="Broken Image Example">
-                    <span data-tooltip-content="This image is broken and will show a placeholder.">Tooltip for Broken Image</span>
+                    <img src="assets/nonexistent.jpg" alt="Broken Image Example" loading="lazy" >
                 </div>
-                <!-- Add more portfolio items here -->
             </div>
         </section>
 
         <section id="contact" class="animated-element">
             <h2>Contact Me</h2>
-            <form id="contactForm">
+            <form id="contactForm" autocomplete="on">
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
@@ -71,15 +67,15 @@
                     <label for="message">Message:</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
-                <div id="formMessage" class="form-message"></div>
+                <div id="formMessage" class="form-message" aria-live="polite"></div>
                 <button type="submit">Send Message</button>
             </form>
         </section>
     </main>
 
-    <button id="backToTop">Back to Top</button>
+    <button id="backToTop" aria-label="Back to Top">&#8593;</button>
 
-    <footer>
+    <footer role="contentinfo">
         <p>&copy; 2023 Culinaut</p>
     </footer>
 </body>
