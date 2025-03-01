@@ -1,5 +1,6 @@
+/* Basic styles for the body */
 body {
-    font-family: 'Open Sans', Arial, sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif; /* 'Open Sans' is the preferred font, Arial is the fallback */
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -8,12 +9,14 @@ body {
     transition: background-color 0.3s ease;
 }
 
+/* Styles for the header */
 header {
     background-color: #282828;
     padding: 2rem;
     text-align: center;
 }
 
+/* Styles for navigation links */
 nav a {
     margin: 0 1rem;
     text-decoration: none;
@@ -21,45 +24,53 @@ nav a {
     transition: color 0.3s ease;
 }
 
+/* Hover effect for navigation links */
 nav a:hover {
     color: #bada55;
 }
 
+/* Styles for the main content area */
 main {
     max-width: 960px;
     margin: 2rem auto;
 }
 
+/* Styles for sections */
 section {
     margin-bottom: 3rem;
 }
 
+/* Styles for headings */
 h1, h2 {
     font-weight: 700;
     margin-bottom: 1rem;
 }
 
+/* Styles for h1 headings */
 h1 {
     font-size: 2.5rem;
 }
 
+/* Styles for h2 headings */
 h2 {
     font-size: 2rem;
 }
 
+/* Styles for portfolio and blog grids */
 .portfolio-grid, .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 2rem;
 }
 
-/* Media queries for different screen sizes */
+/* Media query for screens larger than 768px */
 @media (max-width: 1200px) {
     .portfolio-grid, .blog-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust column width */
     }
 }
 
+/* Media query for screens smaller than 768px */
 @media (max-width: 768px) {
     .portfolio-grid, .blog-grid {
         grid-template-columns: 1fr;
@@ -69,6 +80,7 @@ h2 {
     }
 }
 
+/* Media query for screens smaller than 500px */
 @media (max-width: 500px) {
     h1 {
         font-size: 1.8rem; /* Adjust font size for smaller screens */
@@ -78,6 +90,7 @@ h2 {
     }
 }
 
+/* Styles for portfolio items and blog posts */
 .portfolio-item, .blog-post {
     background-color: #282828; /* Slightly darker background for better contrast */
     border: 1px solid #444;
@@ -88,11 +101,13 @@ h2 {
     margin-bottom: 2rem; /* Added margin for better spacing between items */
 }
 
+/* Hover effect for portfolio items and blog posts */
 .portfolio-item:hover, .blog-post:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Styles for images within portfolio items and blog posts */
 .portfolio-item img, .blog-post img {
     max-width: 100%;
     height: auto;
@@ -100,6 +115,7 @@ h2 {
     border-radius: 8px;
 }
 
+/* Styles for the footer */
 footer {
     background-color: #282828;
     padding: 1rem;
