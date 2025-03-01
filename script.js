@@ -25,12 +25,16 @@ const observer = new IntersectionObserver(entries => {
 const animatedElements = document.querySelectorAll('.animated-element');
 animatedElements.forEach(element => observer.observe(element));
 
-// Show/hide blog content on hover (updated)
+// Show/hide blog content on hover (updated with delay)
 document.querySelectorAll('.blog-post').forEach(post => {
+    let timeoutId;
     post.addEventListener('mouseover', function() {
-        this.querySelector('.blog-content').classList.add('show');
+        timeoutId = setTimeout(() => {
+            this.querySelector('.blog-content').classList.add('show');
+        }, 200); // 200ms delay
     });
     post.addEventListener('mouseout', function() {
+        clearTimeout(timeoutId);
         this.querySelector('.blog-content').classList.remove('show');
     });
 });

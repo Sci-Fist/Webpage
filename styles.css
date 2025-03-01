@@ -253,12 +253,17 @@ footer {
 /* Blog Content Styles */
 .blog-content {
     display: none;
-    margin-top: 2rem;
-    padding: 2rem;
-    background-color: #f9f9f9; /* Light gray background for blog content */
-    border: 1px solid #ddd;
+    position: absolute;
+    z-index: 10;
+    background-color: #333; /* Dark gray background for tooltip */
+    color: white; /* White text for tooltip */
+    padding: 1rem;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    margin-top: 1rem;
+    width: 250px; /* Adjust width as needed */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .blog-content.show {
