@@ -4,20 +4,17 @@ import { handleFormSubmission } from './modules/form.js';
 import { handleAnimations } from './modules/animations.js';
 import { handleImageError } from './modules/imageHandling.js';
 
-window.addEventListener('load', () => {
-    console.log('Window loaded!');
-    try {
-        handleNavigation();
-        handleBackToTop();
-        handleFormSubmission();
-        handleAnimations();
+try {
+    handleNavigation();
+    handleBackToTop();
+    handleFormSubmission();
+    handleAnimations();
 
-        const images = document.querySelectorAll('img');
-        images.forEach(img => {
-            img.addEventListener('error', () => handleImageError(img));
-        });
-    } catch (error) {
-        console.error('Error during initialization:', error);
-    }
-});
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        img.addEventListener('error', () => handleImageError(img));
+    });
+} catch (error) {
+    console.error('Error during initialization:', error);
+}
 
