@@ -47,6 +47,8 @@ export const handleFormSubmission = () => {
                         errorMessage = 'Ungültige Eingabe. Bitte überprüfen Sie Ihre Daten.';
                     } else if (response.status === 500) {
                         errorMessage = 'Ein interner Serverfehler ist aufgetreten.';
+                    } else {
+                        errorMessage = `HTTP-Fehler ${response.status}. Bitte versuchen Sie es später noch einmal.`;
                     }
                     displayFormMessage(errorMessage, 'error');
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -55,7 +57,7 @@ export const handleFormSubmission = () => {
                 const data = await response.json();
                 displayFormMessage(data.message || 'Formular erfolgreich abgesendet!', 'success');
             } catch (error) {
-                displayFormMessage('Fehler beim Absenden des Formulars. Bitte versuchen Sie es später noch einmal.', 'error');
+                displayFormMessage('Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal.', 'error');
                 console.error('Error:', error);
             }
         }
@@ -65,6 +67,7 @@ export const handleFormSubmission = () => {
         formMessage.textContent = message;
         formMessage.classList.remove('success', 'error');
         formMessage.classList.add(type);
+        formMessage.setAttribute('role', 'alert'); // ARIA attribute for accessibility
         if (inputField) {
             inputField.classList.add('error'); // Add error class to input field
             inputField.addEventListener('input', () => {

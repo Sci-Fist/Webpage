@@ -16,16 +16,11 @@ import { handleTooltips } from './modules/tooltips.js';
 // animations.js
 import { handleAnimations } from './modules/animations.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Hide loading indicator
-    const loadingIndicator = document.getElementById('loading-indicator');
-    if (loadingIndicator) {
-        loadingIndicator.style.display = 'none';
-        setTimeout(() => {
-            loadingIndicator.remove();
-        }, 500);
-    }
+// loading.js
+import { handleLoadingIndicator } from './modules/loading.js';
 
+document.addEventListener('DOMContentLoaded', () => {
+    handleLoadingIndicator();
     handleNavigation();
     handleBackToTop();
     handleFormSubmission();
@@ -43,3 +38,4 @@ document.addEventListener('DOMContentLoaded', () => {
         img.addEventListener('error', () => handleImageError(img));
     });
 });
+
