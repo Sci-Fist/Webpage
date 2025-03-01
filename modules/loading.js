@@ -7,10 +7,16 @@ export const handleLoadingIndicator = () => {
 
     try {
         loadingIndicator.style.display = 'none';
-        setTimeout(() => {
+        const timeoutId = setTimeout(() => {
             loadingIndicator.remove();
             console.log('Loading indicator removed successfully.');
         }, 100);
+
+        //Check if the timeout was successful
+        if(timeoutId === undefined){
+            console.error("Timeout function failed to execute");
+        }
+
     } catch (error) {
         console.error('Error removing loading indicator:', error);
     }
