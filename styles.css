@@ -13,7 +13,7 @@ body {
     font-weight: 300;
     overflow-x: hidden;
     font-size: 16px;
-    background-image: url('/assets/nature-background.jpg'); /*Nature background image*/
+    background-image: url('assets/nature-background.jpg'); /*Nature background image*/
     background-size: cover;
     background-attachment: fixed; /*Keeps background fixed on scroll*/
 }
@@ -32,7 +32,7 @@ body {
 
 /* Intro Section */
 .intro {
-    background-image: url('/assets/happy spoons.jpg');
+    background-image: url('assets/happy spoons.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -453,4 +453,26 @@ h1, h2, h3 {
 .portfolio-content.show, .blog-content.show {
     opacity: 1;
     pointer-events: auto;
+}
+
+#loading-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#loading-indicator p {
+    color: white;
+    font-size: 2em;
+}
+
+.blog-post img {
+    margin-bottom: 1rem;
 }
