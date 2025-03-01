@@ -5,32 +5,30 @@ export const handleLoadingIndicator = () => {
         return;
     }
 
-    try {
-        //Remove the loading indicator only after all images have loaded
-        const images = document.querySelectorAll('img');
-        const imageLoadPromises = Array.from(images).map(img => new Promise((resolve, reject) => {
-            img.onload = resolve;
-            img.onerror = reject;
-        }));
+    const images = document.querySelectorAll('img');
+    let loadedImages = 0;
+    const totalImages = images.length;
 
-        Promise.all(imageLoadPromises)
-            .then(() => {
-                loadingIndicator.style.display = 'none';
-                setTimeout(() => {
-                    loadingIndicator.remove();
-                    console.log('Loading indicator removed successfully.');
-                }, 500); // Increased timeout to 500ms
-            })
-            .catch(error => {
-                console.error('Error loading images:', error);
-                loadingIndicator.style.display = 'none';
-                setTimeout(() => {
-                    loadingIndicator.remove();
-                    console.log('Loading indicator removed successfully, but with image loading errors.');
-                }, 500); // Increased timeout to 500ms
-            });
+    if (totalImages === 0) {
+        // Handle case with no images
+        removeLoadingIndicator();
+        return;
+    }
 
-    } catch (error) {
-        console.error('Error removing loading indicator:', error);
+    images.forEach(img => {
+        img.onload = () => checkIfAllImagesLoaded();
+        img.onerror = () => checkIfAllImagesLoaded();
+    });
+
+    function checkIfAllImagesLoaded() {
+        loadedImages++;
+        if (loadedImages >= totalImages) {
+            removeLoadingIndicator();
+        }
+    }
+
+    function removeLoadingIndicator() {
+        loadingIndicator.style.display = 'none';
+        setTimeout(() => loadingIndicator.remove(), 500);
     }
 };
