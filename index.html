@@ -1,66 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mein Koch-Portfolio - Köstliche Menüs und leckere Rezepte.">
-    <title>Mein Koch-Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-</head>
-<body>
-    <header class="header">
-        <h1 class="header__title">Mein Koch-Portfolio</h1>
-        <nav class="nav">
-            <a class="nav__link" href="#portfolio">Portfolio</a>
-            <a class="nav__link" href="#blog">Blog</a>
-            <a class="nav__link" href="#kontakt">Kontakt</a>
-        </nav>
-    </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Portfolio - Menüs und Rezepte." />
+        <title>Mein Koch-Portfolio</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="header__title">Mein Koch-Portfolio</h1>
+            <nav class="nav">
+                <a class="nav__link" href="#portfolio">Portfolio</a>
+                <a class="nav__link" href="#blog">Blog</a>
+                <a class="nav__link" href="#kontakt">Kontakt</a>
+            </nav>
+        </header>
 
-    <main>
-        <section id="portfolio">
-            <h2>Portfolio</h2>
-            <div class="portfolio-grid">
-                <article class="portfolio-item portfolio-item--spring">
-                    <img src="../assets/happy spoons.jpg" alt="Frühlingsmenü: Ein leichtes und frisches Menü mit saisonalen Zutaten.">
-                    <h3>Menü 1: Frühlingsmenü</h3>
-                    <p>Beschreibung des Frühlingsmenüs.  [Fügen Sie hier eine kurze Beschreibung des Menüs ein.]</p>
-                </article>
-                <article class="portfolio-item portfolio-item--summer">
-                    <img src="../assets/happy spoons.jpg" alt="Sommergrillmenü: Ein leckeres Grillmenü für warme Sommerabende.">
-                    <h3>Menü 2: Sommergrillen</h3>
-                    <p>Beschreibung des Sommergrillmenüs. [Fügen Sie hier eine kurze Beschreibung des Menüs ein.]</p>
-                </article>
-            </div>
-        </section>
+        <main>
+            <section id="portfolio">
+                <h2>Portfolio</h2>
+                <div class="portfolio-grid">
+                    <article class="portfolio-item portfolio-item--spring">
+                        <img
+                            src="../assets/happy spoons.jpg"
+                            alt="Frühlingsmenü: Ein leichtes und frisches Menü mit saisonalen Zutaten."
+                        />
+                        <h3>Menü 1: Frühlingsmenü</h3>
+                        <p>
+                            Beschreibung des Frühlingsmenüs. [Fügen Sie hier
+                            eine kurze Beschreibung des Menüs ein.]
+                        </p>
+                    </article>
+                    <article class="portfolio-item portfolio-item--summer">
+                        <img
+                            src="../assets/happy spoons.jpg"
+                            alt="Sommergrillmenü: Ein leckeres Grillmenü für warme Sommerabende."
+                        />
+                        <h3>Menü 2: Sommergrillen</h3>
+                        <p>
+                            Beschreibung des Sommergrillmenüs. [Fügen Sie hier
+                            eine kurze Beschreibung des Menüs ein.]
+                        </p>
+                    </article>
+                </div>
+            </section>
 
-        <section id="blog">
-            <h2>Blog</h2>
-            <div class="blog-grid">
-                <article class="blog-post">
-                    <img src="../assets/happy spoons.jpg" alt="Blogbeitrag: Regionale Küche im Frühling.">
-                    <h3>Blogbeitrag 1: Regionale Küche im Frühling</h3>
-                    <p>Kurze Zusammenfassung des Blogbeitrags 1. [Fügen Sie hier eine kurze Zusammenfassung ein.]</p>
-                    <a href="blogposts/blog-post1.html">Weiterlesen</a>
-                </article>
-                <article class="blog-post">
-                    <img src="../assets/happy spoons.jpg" alt="Blogbeitrag: Nachhaltiges und regionales Kochen.">
-                    <h3>Blogbeitrag 2: Nachhaltiges und regionales Kochen</h3>
-                    <p>Kurze Zusammenfassung des Blogbeitrags 2. [Fügen Sie hier eine kurze Zusammenfassung ein.]</p>
-                    <a href="blogposts/blog-post2.html">Weiterlesen</a>
-                </article>
-            </div>
-        </section>
+            <section id="blog">
+                <h2>Blog</h2>
+                <div class="blog-grid">
+                    <article class="blog-post">
+                        <img
+                            src="../assets/happy spoons.jpg"
+                            alt="Blogbeitrag: Regionale Küche im Frühling."
+                        />
+                        <h3>Blogbeitrag 1: Regionale Küche im Frühling</h3>
+                        <p>
+                            Kurze Zusammenfassung des Blogbeitrags 1. [Fügen Sie
+                            hier eine kurze Zusammenfassung ein.]
+                        </p>
+                        <a href="blogposts/blog-post1.html">Weiterlesen</a>
+                    </article>
+                    <article class="blog-post">
+                        <img
+                            src="../assets/happy spoons.jpg"
+                            alt="Blogbeitrag: Nachhaltiges und regionales Kochen."
+                        />
+                        <h3>
+                            Blogbeitrag 2: Nachhaltiges und regionales Kochen
+                        </h3>
+                        <p>
+                            Kurze Zusammenfassung des Blogbeitrags 2. [Fügen Sie
+                            hier eine kurze Zusammenfassung ein.]
+                        </p>
+                        <a href="blogposts/blog-post2.html">Weiterlesen</a>
+                    </article>
+                </div>
+            </section>
 
-        <section id="kontakt">
-            <h2>Kontaktieren Sie mich</h2>
-            <p>Email: example@example.com<br>Telefon: +49 123 456789</p>
-        </section>
-    </main>
+            <section id="kontakt">
+                <h2>Kontaktieren Sie mich</h2>
+                <p>Email: example@example.com<br />Telefon: +49 123 456789</p>
+            </section>
+        </main>
 
-    <footer class="footer">
-        <p class="footer__copyright">&copy; 2024 Ihr Name</p>
-    </footer>
-</body>
+        <footer class="footer">
+            <p class="footer__copyright">&copy; 2024 Ihr Name</p>
+        </footer>
+    </body>
 </html>
