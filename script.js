@@ -5,8 +5,12 @@ import { handleAnimations } from './modules/animations.js';
 import { handleImageError } from './modules/imageHandling.js';
 import { handleLoadingIndicator } from './modules/loading.js';
 
+const errorContainer = document.createElement('div');
+errorContainer.id = 'error-container';
+errorContainer.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; z-index: 1001; color: white;'; // Add error container
+
 try {
-    handleLoadingIndicator(); // Call loading indicator first
+    handleLoadingIndicator();
     handleNavigation();
     handleBackToTop();
     handleFormSubmission();
@@ -18,5 +22,8 @@ try {
     });
 } catch (error) {
     console.error('Error during initialization:', error);
+    const errorMessage = `An error occurred: ${error.message}`;
+    errorContainer.innerHTML = `<p>${errorMessage}</p>`;
+    document.body.appendChild(errorContainer);
 }
 
