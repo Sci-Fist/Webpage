@@ -11,12 +11,7 @@
 </head>
 <body>
     <div id="loading-indicator">
-        <div class="lds-ring">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+        <p>Lade Inhalte...</p>
     </div>
     <header class="header">
         <a href="#" class="header__logo">
@@ -35,7 +30,7 @@
     </header>
 
     <main>
-        <article id="vorstellung" class="intro animated-element">
+        <article id="vorstellung" class="intro animated-element show">
             <div class="intro__content">
                 <h2>Willkommen!</h2>
                 <p>Culinaut – Chefkoch und Food-Fotograf mit Fokus auf nachhaltige Küche. Essen, das so gut aussieht, wie es schmeckt.</p>
@@ -46,15 +41,15 @@
         <article id="portfolio" class="portfolio-grid animated-element">
             <h2>Portfolio</h2>
             <div class="portfolio__inner">
-                <article class="portfolio-item portfolio-item--spring animated-element" data-tooltip-content>
-                    <img src="assets/portfolio1.jpg" alt="A light and fresh spring menu with seasonal ingredients such as asparagus, strawberries, and rhubarb." loading="lazy">
+                <article class="portfolio-item portfolio-item--spring animated-element" data-portfolio-description="Ein Frühlingsmenü mit Spargel, Erdbeeren und Rhabarber." data-tooltip-content>
+                    <img src="assets/portfolio1.jpg" alt="Ein appetitliches Bild eines Frühlingsmenüs mit Spargel, Erdbeeren und Rhabarber." loading="lazy">
                     <h3>Frühlingsmenü</h3>
                     <div data-tooltip-content>
                         <p>Leichte und frische Gerichte mit Spargel, Erdbeeren und Rhabarber. Perfekt für ein besonderes Abendessen.</p>
                     </div>
                 </article>
-                <article class="portfolio-item portfolio-item--summer animated-element" data-tooltip-content>
-                    <img src="assets/portfolio2.jpg" alt="A delicious summer barbecue menu featuring grilled vegetables and sustainable meats." loading="lazy">
+                <article class="portfolio-item portfolio-item--summer animated-element" data-portfolio-description="Ein köstliches Sommer-Grillmenü mit gegrilltem Gemüse und nachhaltigem Fleisch." data-tooltip-content>
+                    <img src="assets/portfolio2.jpg" alt="Ein ansprechendes Bild eines Sommer-Grillmenüs mit gegrilltem Gemüse und nachhaltigem Fleisch." loading="lazy">
                     <h3>Sommer-Grillmenü</h3>
                     <div data-tooltip-content>
                         <p>Köstliches Grillmenü für warme Sommerabende mit gegrilltem Gemüse und nachhaltigem Fleisch. Perfekt für eine entspannte Grillparty.</p>
@@ -66,18 +61,18 @@
         <article id="blog" class="blog-grid animated-element">
             <h2>Blog</h2>
             <div class="blog__inner">
-                <article class="blog-post animated-element" data-tooltip-content>
-                    <img src="assets/blog1.jpg" alt="Blog post: Recipe for asparagus salad with strawberries and balsamic vinegar." loading="lazy">
+                <article class="blog-post animated-element" data-blog-description="Ein Rezept für einen leckeren Spargel-Salat mit Erdbeeren und Balsamico." data-tooltip-content>
+                    <img src="assets/blog1.jpg" alt="Ein Bild von einem Spargel-Salat mit Erdbeeren und Balsamico." loading="lazy">
                     <h3><a href="blogposts/blog-post1.html" class="blog-link">Spargel-Salat mit Erdbeeren und Balsamico</a></h3>
                     <div data-tooltip-content>
-                        <p>Tooltip content for Spargel-Salat</p>
+                        <p>Ein Rezept für einen leckeren Spargel-Salat mit Erdbeeren und Balsamico.</p>
                     </div>
                 </article>
-                <article class="blog-post animated-element" data-tooltip-content>
-                    <img src="assets/blog2.jpg" alt="Blog post: Recipe for rhubarb crumble with vanilla sauce." loading="lazy">
+                <article class="blog-post animated-element" data-blog-description="Ein Rezept für einen köstlichen Rhabarber-Crumble mit Vanillesauce." data-tooltip-content>
+                    <img src="assets/blog2.jpg" alt="Ein Bild von einem Rhabarber-Crumble mit Vanillesauce." loading="lazy">
                     <h3><a href="blogposts/blog-post2.html" class="blog-link">Rhabarber-Crumble mit Vanillesauce</a></h3>
                     <div data-tooltip-content>
-                        <p>Tooltip content for Rhabarber-Crumble</p>
+                        <p>Ein Rezept für einen köstlichen Rhabarber-Crumble mit Vanillesauce.</p>
                     </div>
                 </article>
             </div>
