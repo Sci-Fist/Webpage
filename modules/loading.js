@@ -1,22 +1,22 @@
-export const handleLoadingIndicator = (timeoutMs = 10000) => { // Increased timeout to 10 seconds
+export const handleLoadingIndicator = (timeoutMs = 10000) => {
     const loadingIndicator = document.getElementById('loading-indicator');
     if (!loadingIndicator) {
-        console.error('Loading indicator element not found!');
+        console.error('Loading indicator element not found!  Check if you have an element with the id "loading-indicator" in your HTML.');
         return;
     }
 
-    // Initially hide the loading indicator (CSS)
-    loadingIndicator.style.display = 'none';
+    loadingIndicator.style.display = 'block'; // Show the loading indicator initially
 
     const images = document.querySelectorAll('img');
     let loadedImages = 0;
     const totalImages = images.length;
 
     if (totalImages === 0) {
-        return; // No images, nothing to wait for
+        removeLoadingIndicator(); // No images, remove immediately
+        return;
     }
 
-    const timeoutId = setTimeout(removeLoadingIndicator, timeoutMs); // Configurable timeout
+    const timeoutId = setTimeout(removeLoadingIndicator, timeoutMs);
 
     images.forEach(img => {
         img.onload = () => {
@@ -37,7 +37,13 @@ export const handleLoadingIndicator = (timeoutMs = 10000) => { // Increased time
     }
 
     function removeLoadingIndicator() {
-        loadingIndicator.style.display = 'none';
-        setTimeout(() => loadingIndicator.remove(), 500);
+        if (loadingIndicator) { // Check if the element still exists
+            loadingIndicator.style.display = 'none';
+            setTimeout(() => {
+                if (loadingIndicator) { // Check again before removing
+                    loadingIndicator.remove();
+                }
+            }, 500);
+        }
     }
 };
