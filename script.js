@@ -126,6 +126,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Function to handle image loading errors
+    const handleImageError = (img) => {
+        const container = img.closest('.portfolio-item') || img.closest('.blog-post'); //Find the closest parent
+        if (container) {
+            container.classList.add('image-fallback');
+            // Optionally, remove the broken image element
+            img.remove();
+        }
+    };
+
+    // Add event listeners to portfolio and blog images
+    const portfolioImages = document.querySelectorAll('.portfolio-item img');
+    const blogImages = document.querySelectorAll('.blog-post img');
+
+    portfolioImages.forEach(img => {
+        img.addEventListener('error', () => handleImageError(img));
+    });
+    blogImages.forEach(img => {
+        img.addEventListener('error', () => handleImageError(img));
+    });
+
+
     handleNavigation();
     handleTooltips();
     handleAnimations();

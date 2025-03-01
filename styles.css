@@ -3,6 +3,35 @@ Primary Color: #A7D1AB (Light green)
 Secondary Color: #558B2F (Dark olive green)
 */
 
+/* Image Fallback Styles */
+.image-fallback {
+    background: linear-gradient(135deg, #a0d468, #8cc63f); /* Nature-inspired gradient */
+    color: #fff; /* White text */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-style: italic;
+    position: relative; /* Needed for ::before pseudo-element */
+    min-height: 200px; /* Set a minimum height */
+}
+
+.image-fallback::before {
+    content: "Bild nicht verfügbar";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the text */
+}
+
+.portfolio-item.image-fallback img,
+.blog-post.image-fallback img {
+    display: none; /* Hide the broken image */
+}
+
+
+
 body {
     min-height: 100vh;
     font-family: 'Arial', sans-serif;
