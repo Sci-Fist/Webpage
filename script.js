@@ -92,26 +92,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (isValid) {
-                fetch('Your actual submission endpoint', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ name, email, message })
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    displayFormMessage(data.message || 'Formular erfolgreich abgesendet!', 'success');
-                })
-                .catch(error => {
-                    displayFormMessage('Fehler beim Absenden des Formulars. Bitte versuchen Sie es später noch einmal.', 'error');
-                    console.error('Error:', error);
-                });
+                // Replace the following line with your actual submission logic
+                // For example:
+                // fetch('your_submission_endpoint', {
+                //   method: 'POST',
+                //   headers: {
+                //     'Content-Type': 'application/json',
+                //   },
+                //   body: JSON.stringify({ name, email, message }),
+                // })
+                // .then(response => {
+                //   if (!response.ok) {
+                //     throw new Error(`HTTP error! status: ${response.status}`);
+                //   }
+                //   return response.json();
+                // })
+                // .then(data => {
+                //   displayFormMessage(data.message || 'Formular erfolgreich abgesendet!', 'success');
+                // })
+                // .catch(error => {
+                //   displayFormMessage('Fehler beim Absenden des Formulars. Bitte versuchen Sie es später noch einmal.', 'error');
+                //   console.error('Error:', error);
+                // });
+                displayFormMessage('Formular erfolgreich abgesendet!', 'success'); // Simulate success
             }
         });
 
@@ -128,10 +131,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to handle image loading errors
     const handleImageError = (img) => {
-        const container = img.closest('.portfolio-item') || img.closest('.blog-post'); //Find the closest parent
+        const container = img.closest('.portfolio-item') || img.closest('.blog-post');
         if (container) {
             container.classList.add('image-fallback');
-            // Optionally, remove the broken image element
             img.remove();
         }
     };
@@ -146,7 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
     blogImages.forEach(img => {
         img.addEventListener('error', () => handleImageError(img));
     });
-
 
     handleNavigation();
     handleTooltips();

@@ -13,7 +13,7 @@ Secondary Color: #558B2F (Dark olive green)
     align-items: center;
     font-size: 1.2rem;
     font-style: italic;
-    position: relative; /* Needed for ::before pseudo-element */
+    position: relative; /* For absolute positioning of text */
     min-height: 200px; /* Set a minimum height */
 }
 
@@ -22,7 +22,7 @@ Secondary Color: #558B2F (Dark olive green)
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Center the text */
+    transform: translate(-50%, -50%);
 }
 
 .portfolio-item.image-fallback img,
@@ -30,8 +30,7 @@ Secondary Color: #558B2F (Dark olive green)
     display: none; /* Hide the broken image */
 }
 
-
-
+/* Basic styles for the body */
 body {
     min-height: 100vh;
     font-family: 'Arial', sans-serif;
@@ -51,6 +50,7 @@ body {
     background-attachment: fixed;
 }
 
+/* Animations */
 .animated-element {
     opacity: 0;
     transform: translateY(20px);
@@ -62,6 +62,7 @@ body {
     transform: translateY(0);
 }
 
+/* Intro Section */
 .intro {
     background-image: url('assets/happy spoons.jpg');
     background-size: cover;
@@ -216,7 +217,7 @@ h3 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 1rem;
-    background-color: #fff;
+    background-color: rgba(160, 212, 104, 0.1); /* Light green background */
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -280,7 +281,7 @@ h3 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 1rem;
-    background-color: #fff;
+    background-color: rgba(160, 212, 104, 0.2); /* Light green background for blog grid */
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -531,7 +532,7 @@ h1, h2, h3 {
 
 #backToTop:hover {
     background-color: var(--accent-color);
-    border-color: var(--secondary-color); /* Add hover border */
+    border-color: var(--secondary-color);
 }
 
 @media (max-width: 768px) {
@@ -610,26 +611,53 @@ h1, h2, h3 {
 
 /*Improved contrast for intro section*/
 .intro {
-    color: #f8f9fa; /* Light gray text for better contrast */
+    color: #f8f9fa;
 }
 
 /*Improved contrast for tooltips*/
 [data-tooltip-content] {
-    background-color: rgba(255, 255, 255, 0.8); /* Lighter background */
-    color: #333; /* Dark gray text */
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
 }
 
 /*Improved contrast for footer*/
 footer {
-    color: #f8f9fa; /* Light gray text for better contrast */
+    color: #f8f9fa;
 }
 
 /*Improved contrast for nav links*/
 nav a {
-    color: #f8f9fa; /* Light gray text for better contrast */
+    color: #f8f9fa;
 }
 
 nav a:hover {
-    color: #558B2F; /* Dark olive green */
+    color: #558B2F;
     background-color: white;
+    border-color: var(--secondary-color);
 }
+
+/* Style improvements for hover and focus states */
+nav a:hover,
+nav a:focus,
+.cta-button:hover,
+.cta-button:focus,
+#backToTop:hover,
+#backToTop:focus,
+#contactForm button:hover,
+#contactForm button:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.5); /* Add a green glow on hover/focus */
+}
+
+.portfolio-item:hover,
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-item:focus,
+.blog-post:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.5);
+}
+
