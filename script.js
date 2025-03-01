@@ -7,6 +7,11 @@ import { handleBackToTop } from './modules/backToTop.js';
 // form.js
 import { handleFormSubmission } from './modules/form.js';
 
+// imageHandling.js
+import { handleImageError } from './modules/imageHandling.js';
+
+// tooltips.js
+import { handleTooltips } from './modules/tooltips.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Hide loading indicator
@@ -21,4 +26,16 @@ document.addEventListener('DOMContentLoaded', () => {
     handleNavigation();
     handleBackToTop();
     handleFormSubmission();
+    handleTooltips();
+
+    // Add event listeners to portfolio and blog images
+    const portfolioImages = document.querySelectorAll('.portfolio-item img');
+    const blogImages = document.querySelectorAll('.blog-post img');
+
+    portfolioImages.forEach(img => {
+        img.addEventListener('error', () => handleImageError(img));
+    });
+    blogImages.forEach(img => {
+        img.addEventListener('error', () => handleImageError(img));
+    });
 });

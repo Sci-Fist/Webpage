@@ -1,14 +1,22 @@
 export const handleTooltips = () => {
     const createTooltip = (element) => {
-        const tooltip = element.querySelector('[data-tooltip-content]');
-        if (!tooltip || !element.parentElement) return; //Added null check
+        const tooltipContent = element.getAttribute('data-tooltip-content');
+        if (!tooltipContent) return; //Added null check for data-tooltip-content
 
-        element.addEventListener('click', () => {
-            tooltip.classList.toggle('show');
-            element.parentElement.classList.toggle('tooltip-active'); //Added visual feedback
+        const tooltip = document.createElement('span');
+        tooltip.className = 'tooltip-content';
+        tooltip.textContent = tooltipContent;
+        element.appendChild(tooltip);
+
+        element.addEventListener('mouseenter', () => {
+            tooltip.classList.add('show');
+        });
+
+        element.addEventListener('mouseleave', () => {
+            tooltip.classList.remove('show');
         });
     };
 
     const tooltipElements = document.querySelectorAll('[data-tooltip-content]');
-    tooltipElements.forEach(element => createTooltip(element.parentElement));
+    tooltipElements.forEach(createTooltip);
 };
