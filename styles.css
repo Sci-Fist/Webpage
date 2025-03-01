@@ -1,6 +1,6 @@
 /* ... your existing CSS ... */
 
 body {
-    font-family: "Unispace", monospace; /* Apply IBM Plex Mono */
+    font-family: monospace;
     /* ... rest of your body styles ... */
 }
