@@ -5,110 +5,98 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #f8f8f8; /* Light gray background */
-    color: #333; /* Black text */
+    background-color: #1e1e1e; /* Dark background */
+    color: #eee; /* Light text color */
     transition: background-color 0.3s ease;
     display: flex;
     flex-direction: column;
-    font-size: 1rem; /* Default font size */
 }
 
 /* Styles for the header */
 header {
-    background-color: #222;
+    background-color: #282828;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 3rem; /* Adjusted padding */
+    padding: 2rem;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    z-index: 1000;
-    position: sticky;
-    top: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 /* Styles for navigation links */
 nav {
     display: flex;
     justify-content: center;
-    gap: 2rem; /* Increased gap between navigation links */
+    gap: 1rem;
 }
 
 nav a {
     text-decoration: none;
-    color: #fff; /* White text for navigation links */
+    color: #eee;
     font-weight: bold;
-    font-size: 1.1rem; /* Slightly larger font size */
     transition: color 0.3s ease, background-color 0.3s ease;
-    padding: 0.8rem 1.8rem; /* Increased padding for better usability */
-    border-radius: 8px; /* Consistent border radius */
-    border: 2px solid transparent;
+    padding: 0.5rem 1rem;  /* Added padding for better click target */
+    border-radius: 5px;
 }
 
+/* Hover effect for navigation links - background color */
 nav a:hover {
-    color: #222;
-    background-color: #f0c808;
-    border-color: #f0c808;
+    background-color: #3a3a3a; /* Darker background on hover */
+    color: #fff; /* White text on hover */
 }
 
 /* Styles for the main content area */
 main {
     max-width: 960px;
-    margin: 4rem auto; /* Increased margin */
-    padding: 0 2rem;
-    flex: 1;
+    padding: 2rem; /* Increased padding */
+    margin: 2rem auto;
+    flex: 1; /* Added flex: 1 to allow main content to take up available space */
 }
 
 /* Styles for sections */
 section {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 /* Styles for headings */
 h1, h2 {
     font-weight: 700;
-    margin-bottom: 2rem;
-    color: #222; /* Dark heading color */
-    font-family: 'Lora', serif; /* Use Lora font for headings */
-}
-
-h1 {
-    font-size: 3.5rem; /* Larger h1 size */
+    margin-bottom: 1rem;
+    color: #f0f0f0; /* Consistent heading color */
     text-align: center;
 }
 
+/* Styles for h1 headings */
+h1 {
+    font-size: 2.5rem; /* Larger h1 size */
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles for h2 headings */
 h2 {
-    font-size: 2.5rem; /* Slightly larger h2 size */
+    font-size: 2rem; /* Slightly larger h2 size */
+    margin-bottom: 1.5rem; /* More space below h2 */
 }
 
 /* Styles for portfolio and blog grids */
 .portfolio-grid, .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 4rem; /* Increased gap */
-    background-color: #f2f2f2; /* Light gray background for grids */
-    padding: 3rem;
-    border-radius: 8px;
+    grid-gap: 2.5rem; /* Increased gap */
 }
 
-/* Responsive adjustments for larger screens */
+/* Media query for screens larger than 768px */
 @media (min-width: 1200px) {
     .portfolio-grid, .blog-grid {
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider items on larger screens */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 }
 
-/* Responsive adjustments for medium screens */
-@media (min-width: 768px) and (max-width: 1199px) {
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
     .portfolio-grid, .blog-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 767px) {
-    .portfolio-grid, .blog-grid {
-        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+        grid-template-columns: 1fr;
     }
     h1 {
         font-size: 2rem;
@@ -133,65 +121,60 @@ h2 {
 
 /* Styles for portfolio items and blog posts */
 .portfolio-item, .blog-post {
-    background-color: #fff; /* White background for items */
-    border: 1px solid #ddd; /* Light border for items */
-    padding: 3rem; /* Increased padding */
+    background-color: #333; /* Darker background for contrast */
+    border: 1px solid #444;
+    padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Increased shadow depth */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem; /* Added margin for better spacing between items */
     text-align: center;
 }
 
+/* Hover effect for portfolio items and blog posts */
 .portfolio-item:hover, .blog-post:hover {
-    transform: translateY(-5px); /* Slightly lift on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+    transform: translateY(-7px); /* Increased hover lift */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
 }
 
+/* Styles for images within portfolio items and blog posts */
 .portfolio-item img, .blog-post img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 2rem; /* Adjusted margin */
+    margin-bottom: 1.2rem; /* Adjusted margin */
     border-radius: 8px;
-    transition: transform 0.3s ease; /* Add transition for a smooth hover effect */
-    object-fit: cover; /* Ensure images cover the container */
-}
-
-.portfolio-item img:hover, .blog-post img:hover {
-    transform: scale(1.05); /* Slightly zoom in on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for images */
 }
 
 /* Styles for the footer */
 footer {
-    background-color: #222;
-    padding: 2rem 4rem;
+    background-color: #282828;
+    padding: 1rem;
     text-align: center;
-    color: #fff;
     font-size: 0.9rem; /* Reduced font size */
+    color: #aaa; /* Lighter footer text */
 }
 
 /* Added classes for better structure */
 .header__title {
     margin: 0;
-    font-size: 3.5rem;
-    font-family: 'Lora', serif; /* Use Lora font for the title */
+}
+
+.nav__link {
+    margin: 0 1rem;
 }
 
 .footer__copyright {
     margin: 0;
-    font-size: 0.9rem;
 }
 
 /* Added styles for portfolio items */
 .portfolio-item--spring {
-    background-color: #f0c808;
-    color: #222;
+    background-color: #3a3a3a;
 }
 
 .portfolio-item--summer {
-    background-color: #4CAF50;
-    color: #fff;
+    background-color: #444;
 }
 
 /* Add Google Fonts link */
