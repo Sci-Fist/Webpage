@@ -19,13 +19,13 @@ import { handleAnimations } from './modules/animations.js';
 // loading.js
 import { handleLoadingIndicator } from './modules/loading.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-    handleLoadingIndicator();
+window.addEventListener('load', () => { // Changed to 'load' event
     handleNavigation();
     handleBackToTop();
     handleFormSubmission();
     handleTooltips();
     handleAnimations();
+    handleLoadingIndicator(); // Moved here
 
     // Add event listeners to portfolio and blog images
     const portfolioImages = document.querySelectorAll('.portfolio-item img');
