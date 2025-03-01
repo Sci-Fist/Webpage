@@ -3,54 +3,60 @@
  * @param {number} timeoutMs - Timeout in milliseconds after which the loading indicator is removed regardless of loading status. Defaults to 10000ms (10 seconds).
  */
 export const handleLoadingIndicator = (timeoutMs = 10000) => {
-    // Get the loading indicator element
     const loadingIndicator = document.getElementById('loading-indicator');
-    // Get the main content element
     const mainContent = document.getElementById('main-content');
-    // Check if the loading indicator element exists
+
     if (!loadingIndicator) {
-        console.error('Loading indicator element not found! Check if you have an element with the id "loading-indicator" in your HTML.');
+        console.error('Loading indicator element not found!');
         return;
     }
-    // Check if the main content element exists
     if (!mainContent) {
-        console.error('Main content element not found! Check if you have an element with the id "main-content" in your HTML.');
+        console.error('Main content element not found!');
         return;
     }
 
-    // Show the loading indicator
     loadingIndicator.style.display = 'block';
 
-    //Resource tracking using Promises
-    const promises = [];
+    let resourcesToLoad = 0;
+    let resourcesLoaded = 0;
+    const resourcePromises = [];
 
     const trackResource = (resource, resourceType) => {
+        resourcesToLoad++;
         return new Promise((resolve, reject) => {
-            resource.onload = () => resolve();
-            resource.onerror = () => reject(new Error(`Error loading ${resourceType}: ${resource.src || resource.href}`));
+            const listener = () => {
+                resourcesLoaded++;
+                resource.removeEventListener('load', listener);
+                resource.removeEventListener('error', listener);
+                resolve();
+            };
+            resource.addEventListener('load', listener);
+            resource.addEventListener('error', listener);
         });
     };
 
+    //Track images
     const images = document.querySelectorAll('img');
-    images.forEach(img => promises.push(trackResource(img, 'image')));
+    images.forEach(img => resourcePromises.push(trackResource(img, 'image')));
 
+    //Track stylesheets
     const styleSheets = document.querySelectorAll('link[rel="stylesheet"]');
-    styleSheets.forEach(link => promises.push(trackResource(link, 'stylesheet')));
+    styleSheets.forEach(link => resourcePromises.push(trackResource(link, 'stylesheet')));
 
+    //Track scripts (this is crucial for async scripts)
     const scripts = document.querySelectorAll('script');
-    scripts.forEach(script => promises.push(trackResource(script, 'script')));
+    scripts.forEach(script => resourcePromises.push(trackResource(script, 'script')));
 
 
-    Promise.allSettled(promises)
+    Promise.allSettled(resourcePromises)
         .then(() => {
-            console.log(`All resources loaded. resourcesLoaded: ${resourcesLoaded}, resourcesToLoad: ${resourcesToLoad}`); //Debugging statement
+            console.log(`All resources loaded. resourcesLoaded: ${resourcesLoaded}, resourcesToLoad: ${resourcesToLoad}`);
             removeLoadingIndicator();
         })
         .catch(error => {
             console.error("Error loading resources:", error);
-            removeLoadingIndicator(); //Remove loading indicator even if there are errors
+            removeLoadingIndicator();
         });
-
 
     const timeoutId = setTimeout(removeLoadingIndicator, timeoutMs);
 
@@ -59,8 +65,8 @@ export const handleLoadingIndicator = (timeoutMs = 10000) => {
             loadingIndicator.style.display = 'none';
             setTimeout(() => {
                 loadingIndicator.remove();
-                mainContent.style.display = 'block'; // Show main content
-            }, 500); // Remove the loading indicator element after a short delay
+                mainContent.style.display = 'block';
+            }, 500);
         }
     }
 };
