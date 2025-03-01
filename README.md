@@ -26,10 +26,17 @@ Diese Website wurde mit HTML, CSS und JavaScript erstellt.
 
 1. **Klonen Sie dieses Repository:** `git clone [Repository-URL]`
 2. **Navigieren Sie zum Projektverzeichnis:** `cd meine-koch-website`
-3. **Installieren Sie die benötigten Pakete (falls zutreffend):**  [Anweisungen für npm oder andere Paketmanager einfügen, falls benötigt]
+3. **Installieren Sie die benötigten Pakete (falls zutreffend):**  Diese Website benötigt keine externen Pakete.
 4. **Erstellen Sie den `docs` Ordner (falls nicht vorhanden):** `mkdir docs`
 5. **Kopieren Sie die Projektdateien in den `docs` Ordner:** `cp -r * docs/`  (oder verwenden Sie ein Build-Skript, falls vorhanden)
 6. **Committen und Pushen Sie die Änderungen:** `git add .`, `git commit -m "Deploy to GitHub Pages"`, `git push origin main`
 7. **Konfigurieren Sie GitHub Pages in Ihren Repository-Einstellungen:**  Wählen Sie den `main` Branch und den `docs` Ordner als Root für GitHub Pages.
+
+**Lokale Ausführung:**
+
+Um die Website lokal zu testen, können Sie einen einfachen HTTP-Server verwenden.  Hier sind einige Möglichkeiten:
+
+* **Python:**  `python -m http.server` (im Projektverzeichnis ausführen)
+* **Node.js:** `npx http-server` (benötigt die Installation von `http-server` via `npm install -g http-server`)
 
 

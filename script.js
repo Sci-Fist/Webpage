@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const createTooltip = (element, tooltipClass) => {
-        const tooltip = element.querySelector(`.${tooltipClass}`);
+    const createTooltip = (element) => {
+        const tooltip = element.querySelector('[data-tooltip-content]');
         if (!tooltip) return;
 
         let timeoutId;
@@ -36,11 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    const blogPosts = document.querySelectorAll('.blog-post');
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    const tooltipElements = document.querySelectorAll('[data-tooltip-content]');
+    tooltipElements.forEach(element => createTooltip(element.parentElement));
 
-    blogPosts.forEach(post => createTooltip(post, 'blog-tooltip'));
-    portfolioItems.forEach(item => createTooltip(item, 'portfolio-content'));
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -66,11 +64,36 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    //Simple form submission (replace with actual submission logic)
+    // Contact Form Validation
     const contactForm = document.getElementById('contactForm');
     contactForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        alert('Form submitted!'); //Replace with actual submission handling
-    });
-});
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        let isValid = true;
 
+        if (name.trim() === '') {
+            alert('Bitte geben Sie Ihren Namen ein.');
+            isValid = false;
+        }
+        if (email.trim() === '' || !isValidEmail(email)) {
+            alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
+            isValid = false;
+        }
+        if (message.trim() === '') {
+            alert('Bitte geben Sie eine Nachricht ein.');
+            isValid = false;
+        }
+
+        if (isValid) {
+            // Submit the form (replace with your actual submission logic)
+            alert('Formular erfolgreich abgesendet!');
+        }
+    });
+
+    function isValidEmail(email) {
+        // Basic email validation regex
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+});
