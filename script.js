@@ -14,16 +14,13 @@ initErrorHandling();
 // Helper function to initialize modules and handle potential errors
 const initializeModule = (module, moduleName) => {
     try {
-        // Attempt to execute the module function
         module();
     } catch (error) {
-        // If an error occurs, pass it to the centralized error handler
         handleError(error, moduleName);
     }
 };
 
-// Initialize all modules using the helper function
-initializeModule(handleLoadingIndicator, 'handleLoadingIndicator');
+// Initialize all modules EXCEPT handleLoadingIndicator
 initializeModule(handleNavigation, 'handleNavigation');
 initializeModule(handleBackToTop, 'handleBackToTop');
 initializeModule(handleFormSubmission, 'handleFormSubmission');
@@ -35,4 +32,7 @@ const images = document.querySelectorAll('img');
 images.forEach(img => {
     img.addEventListener('error', () => handleImageError(img));
 });
+
+// Initialize handleLoadingIndicator LAST to ensure all resources are loaded
+initializeModule(handleLoadingIndicator, 'handleLoadingIndicator');
 
