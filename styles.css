@@ -1,7 +1,7 @@
 /* Basic styles for the body */
 body {
     min-height: 100vh;
-    font-family: 'Lora', serif;
+    font-family: 'Arial', sans-serif; /* Using a more widely available font */
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -37,7 +37,7 @@ body {
     background-position: center;
     color: white;
     text-align: center;
-    padding: 150px 0;
+    padding: 100px 0; /* Reduced padding */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -165,7 +165,7 @@ h1, h2, h3 {
     margin-bottom: 1rem;
     color: #333;
     text-align: center;
-    font-family: 'Lora', serif;
+    font-family: 'Arial', sans-serif; /* Using a more widely available font */
     animation: fadeIn 1s ease-in-out forwards;
     position: relative;
     z-index: 10;
@@ -186,7 +186,7 @@ h3 {
 /* Portfolio Grid */
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
     grid-gap: 1rem;
     background-color: #fff;
     padding: 1rem;
@@ -474,4 +474,14 @@ h1, h2, h3 {
 /*Added for blog-post image hover effect*/
 .blog-post img:hover {
     transform: scale(1.05);
+}
+
+/*Improved responsiveness*/
+@media (max-width: 768px) {
+    .portfolio-grid, .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    .portfolio-item, .blog-post {
+        max-width: 100%;
+    }
 }
