@@ -3,11 +3,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
-        if (targetId) {
-            document.querySelector(`#${targetId}`).scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
+        document.querySelector(`#${targetId}`).scrollIntoView({ behavior: 'smooth' });
     });
 });
 
@@ -18,27 +14,27 @@ const observer = new IntersectionObserver(entries => {
             entry.target.classList.add('show');
         }
     });
-}, {
-    threshold: 0.5
-});
+}, { threshold: 0.5 });
 
 const animatedElements = document.querySelectorAll('.animated-element');
 animatedElements.forEach(element => observer.observe(element));
 
-// Show/hide blog content on hover (updated with delay)
-const showTooltip = (element, tooltipClass) => {
+//Improved Tooltip Function
+const createTooltip = (element, tooltipClass) => {
+    const tooltip = element.querySelector(`.${tooltipClass}`);
     let timeoutId;
-    element.addEventListener('mouseover', function() {
-        timeoutId = setTimeout(() => {
-            this.querySelector(`.${tooltipClass}`).classList.add('show');
-        }, 200); // 200ms delay
+
+    element.addEventListener('mouseover', () => {
+        timeoutId = setTimeout(() => tooltip.classList.add('show'), 200);
     });
-    element.addEventListener('mouseout', function() {
+
+    element.addEventListener('mouseout', () => {
         clearTimeout(timeoutId);
-        this.querySelector(`.${tooltipClass}`).classList.remove('show');
+        tooltip.classList.remove('show');
     });
 };
 
-document.querySelectorAll('.blog-post').forEach(post => showTooltip(post, 'blog-content'));
-document.querySelectorAll('.portfolio-item').forEach(item => showTooltip(item, 'portfolio-content'));
+// Attach tooltips
+document.querySelectorAll('.blog-post').forEach(post => createTooltip(post, 'blog-content'));
+document.querySelectorAll('.portfolio-item').forEach(item => createTooltip(item, 'portfolio-content'));
 

@@ -331,6 +331,7 @@ footer {
     z-index: 10;
     opacity: 0;
     transition: opacity 0.3s ease;
+    text-align: center; /* Center text within tooltip */
 }
 
 .blog-content.show, .portfolio-content.show {
@@ -482,3 +483,4 @@ h1, h2, h3 {
 .portfolio-item:hover img, .blog-post:hover img {
     transform: scale(1.05); /* Subtle hover effect */
 }
+
