@@ -1,4 +1,4 @@
-export const handleLoadingIndicator = (timeoutMs = 5000) => { // Make timeout configurable
+export const handleLoadingIndicator = (timeoutMs = 10000) => { // Increased timeout to 10 seconds
     const loadingIndicator = document.getElementById('loading-indicator');
     if (!loadingIndicator) {
         console.error('Loading indicator element not found!');
