@@ -12,7 +12,8 @@ window.addEventListener('load', () => {
         handleBackToTop();
         handleFormSubmission();
         handleAnimations();
-        handleLoadingIndicator();
+        // Use a configurable timeout (e.g., 5 seconds)
+        handleLoadingIndicator(5000);
 
         const images = document.querySelectorAll('img');
         images.forEach(img => {

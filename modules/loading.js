@@ -1,13 +1,12 @@
-export const handleLoadingIndicator = () => {
+export const handleLoadingIndicator = (timeoutMs = 5000) => { // Make timeout configurable
     const loadingIndicator = document.getElementById('loading-indicator');
     if (!loadingIndicator) {
         console.error('Loading indicator element not found!');
         return;
     }
 
-    // Initially hide the loading indicator
+    // Initially hide the loading indicator (CSS)
     loadingIndicator.style.display = 'none';
-
 
     const images = document.querySelectorAll('img');
     let loadedImages = 0;
@@ -17,7 +16,7 @@ export const handleLoadingIndicator = () => {
         return; // No images, nothing to wait for
     }
 
-    const timeoutId = setTimeout(removeLoadingIndicator, 3000); // Fallback timeout after 3 seconds
+    const timeoutId = setTimeout(removeLoadingIndicator, timeoutMs); // Configurable timeout
 
     images.forEach(img => {
         img.onload = () => {
@@ -32,7 +31,7 @@ export const handleLoadingIndicator = () => {
 
     function checkAllLoaded() {
         if (loadedImages === totalImages) {
-            clearTimeout(timeoutId); // Clear timeout if all images loaded
+            clearTimeout(timeoutId);
             removeLoadingIndicator();
         }
     }
