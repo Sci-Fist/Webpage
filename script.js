@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadingIndicator = document.getElementById('loading-indicator');
     if (loadingIndicator) {
         loadingIndicator.style.display = 'none';
+        setTimeout(() => {
+            loadingIndicator.remove(); // Remove after a short delay
+        }, 500); // Adjust delay as needed
     }
 
     const navLinks = document.querySelectorAll('.nav a'); // More specific selector
@@ -37,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const blogPosts = document.querySelectorAll('.blog-post');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
 
-    blogPosts.forEach(post => createTooltip(post, 'blog-content'));
+    blogPosts.forEach(post => createTooltip(post, 'blog-tooltip'));
     portfolioItems.forEach(item => createTooltip(item, 'portfolio-content'));
 
     // Animations on scroll

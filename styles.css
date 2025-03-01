@@ -298,7 +298,7 @@ h3 {
     transform: scale(1.05);
 }
 
-.blog-content {
+.blog-tooltip {
     display: none;
     position: absolute;
     bottom: 100%;
@@ -319,9 +319,13 @@ h3 {
     overflow-y: auto;
 }
 
-.blog-content.show {
+.blog-tooltip.show {
     display: block;
     opacity: 1;
+}
+
+.blog-post-content {
+    margin-top: 1rem;
 }
 
 .blog-link {
@@ -444,13 +448,13 @@ h1, h2, h3 {
 }
 
 /* Tooltips */
-.portfolio-content, .blog-content {
+.portfolio-content, .blog-tooltip {
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none; /* Prevent accidental clicks */
 }
 
-.portfolio-content.show, .blog-content.show {
+.portfolio-content.show, .blog-tooltip.show {
     opacity: 1;
     pointer-events: auto;
 }
@@ -475,6 +479,9 @@ h1, h2, h3 {
 
 .blog-post img {
     margin-bottom: 1rem;
+    display: block; /* Prevents image from overflowing container */
+    max-width: 100%; /* Ensures image fits within container */
+    height: auto; /* Maintains aspect ratio */
 }
 
 /*Added for blog-post image hover effect*/
