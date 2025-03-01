@@ -24,16 +24,14 @@ export const handleFormSubmission = async () => {
                 body: formData,
             });
 
-            // Check if the response was successful
+            // Check the HTTP status code for a more robust error handling
             if (!response.ok) {
-                let errorMessage = 'Fehler beim Absenden des Formulars.'; // Default error message
-                // Provide more specific error messages based on the HTTP status code
+                let errorMessage;
                 if (response.status === 400) {
                     errorMessage = 'Ungültige Eingabe. Bitte überprüfen Sie Ihre Daten.';
                 } else if (response.status === 500) {
                     errorMessage = 'Ein interner Serverfehler ist aufgetreten.';
                 } else {
-                    // Attempt to parse the error response as JSON
                     const errorData = await response.json();
                     errorMessage = errorData.message || `HTTP-Fehler ${response.status}: ${response.statusText}. Bitte versuchen Sie es später noch einmal.`;
                 }
