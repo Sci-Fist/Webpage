@@ -170,9 +170,15 @@ h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+.portfolio-grid-inner, .blog-grid-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .portfolio-grid, .blog-grid {
+    .portfolio-grid, .blog-grid, .portfolio-grid-inner, .blog-grid-inner {
         grid-template-columns: 1fr;
     }
     h1 {
@@ -244,54 +250,6 @@ footer {
 
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
-/* Blog Post Preview */
-.blog-post::before {
-    content: attr(data-preview);
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333; /* Dark gray preview background */
-    color: white; /* White preview text */
-    padding: 1.5rem 2rem; /* Increased padding for larger preview */
-    border-radius: 8px;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    white-space: pre-wrap;
-    z-index: 1;
-    max-width: 400px; /* Increased max-width for larger preview */
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100px;
-}
-
-.blog-post:hover::before {
-    opacity: 1;
-    transform: translateX(-50%) translateY(-130px); /* Adjust position on hover */
-}
-
-
-.blog-post::before button {
-    background-color: #f0c808; /* Gold button */
-    color: #121212; /* Dark text on button */
-    border: none;
-    padding: 0.7rem 1.5rem; /* Increased button padding */
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    margin-top: 1rem; /* Add some space above the button */
-}
-
-.blog-post::before button:hover {
-    background-color: #e0b808; /* Slightly darker gold on hover */
-}
-
 /* Blog Content Styles */
 .blog-content {
     display: none;
@@ -332,19 +290,3 @@ footer {
     animation: fadeIn 1s ease-in-out forwards;
 }
 
-.read-more-button {
-    background-color: #f0c808; /* Gold button */
-    color: #121212; /* Dark text on button */
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    margin-top: 1rem;
-}
-
-.read-more-button:hover {
-    background-color: #e0b808; /* Slightly darker gold on hover */
-}

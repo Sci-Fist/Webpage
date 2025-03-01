@@ -25,27 +25,11 @@ const observer = new IntersectionObserver(entries => {
 const animatedElements = document.querySelectorAll('.animated-element');
 animatedElements.forEach(element => observer.observe(element));
 
-// Show/hide blog content
+// Show/hide blog content (simplified)
 document.querySelectorAll('.blog-link').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
-        const blogPost = this.parentElement.parentElement;
-        const blogContent = blogPost.querySelector('.blog-content');
-        if (blogContent) {
-            blogContent.classList.toggle('show');
-        }
+        const blogContent = this.nextElementSibling;
+        blogContent.classList.toggle('show');
     });
 });
-
-// Add event listeners for read more buttons in previews
-document.querySelectorAll('.blog-post').forEach(post => {
-    const readMoreButton = post.querySelector('.read-more-button');
-    if (readMoreButton) {
-        readMoreButton.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent the link from triggering
-            const blogContent = post.nextElementSibling;
-            blogContent.classList.add('show');
-        });
-    }
-});
-
