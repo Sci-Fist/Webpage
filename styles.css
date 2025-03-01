@@ -32,7 +32,7 @@ body {
 
 /* Intro Section */
 .intro {
-    background-image: url('/assets/happy spoons.jpg'); /* Placeholder - replace with your actual hero image */
+    background-image: url('/assets/happy spoons.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -88,7 +88,7 @@ body {
 
 /* Header */
 header {
-    background-color: #558B2F; /*Keeps top bar green*/
+    background-color: #558B2F;
     display: flex;
     justify-content: space-between;
     align-items: center;
