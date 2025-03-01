@@ -18,7 +18,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
+    padding: 2rem 4rem; /* Increased padding */
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
@@ -27,7 +27,7 @@ header {
 nav {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 nav a {
@@ -35,65 +35,58 @@ nav a {
     color: #eee;
     font-weight: bold;
     transition: color 0.3s ease, background-color 0.3s ease;
-    padding: 0.5rem 1rem;  /* Added padding for better click target */
-    border-radius: 5px;
+    padding: 0.8rem 1.8rem; /* Increased padding */
+    border-radius: 8px;
+    border: 2px solid transparent;
 }
 
-/* Hover effect for navigation links - background color */
 nav a:hover {
-    background-color: #3a3a3a; /* Darker background on hover */
-    color: #fff; /* White text on hover */
+    color: #222;
+    background-color: #f0c808; /* Gold hover color */
+    border-color: #f0c808;
 }
 
 /* Styles for the main content area */
 main {
     max-width: 960px;
-    padding: 2rem; /* Increased padding */
-    margin: 2rem auto;
-    flex: 1; /* Added flex: 1 to allow main content to take up available space */
+    margin: 4rem auto;
+    padding: 0 2rem;
+    flex: 1;
 }
 
 /* Styles for sections */
 section {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 /* Styles for headings */
 h1, h2 {
     font-weight: 700;
-    margin-bottom: 1rem;
-    color: #f0f0f0; /* Consistent heading color */
+    margin-bottom: 1.5rem;
+    color: #f0f0f0; /* Lighter heading color */
     text-align: center;
+    font-family: 'Lora', serif;
 }
 
-/* Styles for h1 headings */
 h1 {
-    font-size: 2.5rem; /* Larger h1 size */
-    margin: 0;
-    padding: 0;
+    font-size: 3rem;
 }
 
-/* Styles for h2 headings */
 h2 {
-    font-size: 2rem; /* Slightly larger h2 size */
-    margin-bottom: 1.5rem; /* More space below h2 */
+    font-size: 2.2rem;
 }
 
 /* Styles for portfolio and blog grids */
 .portfolio-grid, .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 2.5rem; /* Increased gap */
+    grid-gap: 3rem;
+    background-color: #282828; /* Darker grid background */
+    padding: 2rem;
+    border-radius: 8px;
 }
 
-/* Media query for screens larger than 768px */
-@media (min-width: 1200px) {
-    .portfolio-grid, .blog-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-}
-
-/* Media query for screens smaller than 768px */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .portfolio-grid, .blog-grid {
         grid-template-columns: 1fr;
@@ -104,46 +97,31 @@ h2 {
     h2 {
         font-size: 1.8rem;
     }
-    main {
-        padding: 0 1rem;
-    }
-    header {
-        padding: 1rem;
-    }
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
-    nav a {
-        margin: 0.5rem 0;
-    }
 }
 
 /* Styles for portfolio items and blog posts */
 .portfolio-item, .blog-post {
-    background-color: #333; /* Darker background for contrast */
+    background-color: #333;
     border: 1px solid #444;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Increased shadow depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    margin-bottom: 2.5rem; /* Added margin for better spacing between items */
+    margin-bottom: 2rem;
     text-align: center;
 }
 
-/* Hover effect for portfolio items and blog posts */
 .portfolio-item:hover, .blog-post:hover {
-    transform: translateY(-7px); /* Increased hover lift */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Styles for images within portfolio items and blog posts */
 .portfolio-item img, .blog-post img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 1.2rem; /* Adjusted margin */
+    margin-bottom: 1rem;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for images */
+    object-fit: cover;
 }
 
 /* Styles for the footer */
@@ -151,24 +129,17 @@ footer {
     background-color: #282828;
     padding: 1rem;
     text-align: center;
-    font-size: 0.9rem; /* Reduced font size */
-    color: #aaa; /* Lighter footer text */
+    color: #aaa;
 }
 
-/* Added classes for better structure */
 .header__title {
     margin: 0;
-}
-
-.nav__link {
-    margin: 0 1rem;
 }
 
 .footer__copyright {
     margin: 0;
 }
 
-/* Added styles for portfolio items */
 .portfolio-item--spring {
     background-color: #3a3a3a;
 }
@@ -177,6 +148,5 @@ footer {
     background-color: #444;
 }
 
-/* Add Google Fonts link */
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
