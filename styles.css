@@ -1,10 +1,10 @@
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
     background-color: #1e1e1e; /* Dark background */
-    color: #eee; /* Light text color */
+    color: #f0f0f0; /* Lighter text color for better contrast */
     transition: background-color 0.3s ease;
 }
 
@@ -53,21 +53,39 @@ h2 {
     grid-gap: 2rem;
 }
 
-/* Added media query for smaller screens */
+/* Media queries for different screen sizes */
+@media (max-width: 1200px) {
+    .portfolio-grid, .blog-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust column width */
+    }
+}
+
 @media (max-width: 768px) {
     .portfolio-grid, .blog-grid {
         grid-template-columns: 1fr;
     }
+    h1 {
+        font-size: 2rem;
+    }
 }
 
+@media (max-width: 500px) {
+    h1 {
+        font-size: 1.8rem; /* Adjust font size for smaller screens */
+    }
+    .portfolio-item, .blog-post {
+        padding: 1rem; /* Reduce padding for smaller screens */
+    }
+}
 
 .portfolio-item, .blog-post {
-    background-color: #333;
+    background-color: #282828; /* Slightly darker background for better contrast */
     border: 1px solid #444;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 2rem; /* Added margin for better spacing between items */
 }
 
 .portfolio-item:hover, .blog-post:hover {
@@ -75,7 +93,7 @@ h2 {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.portfolio-item img {
+.portfolio-item img, .blog-post img {
     max-width: 100%;
     height: auto;
     margin-bottom: 1rem;
