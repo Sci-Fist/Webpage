@@ -482,21 +482,3 @@ h1, h2, h3 {
 .portfolio-item:hover img, .blog-post:hover img {
     transform: scale(1.05); /* Subtle hover effect */
 }
-
-/* Improved alt text */
-.portfolio-item img[alt="Frühlingsmenü: Ein leichtes und frisches Menü mit saisonalen Zutaten wie Spargel, Erdbeeren und Rhabarber."] {
-    alt="A light and fresh spring menu with seasonal ingredients such as asparagus, strawberries, and rhubarb.";
-}
-
-.portfolio-item img[alt="Sommer-Grillmenü: Ein köstliches Grillmenü für warme Sommerabende mit gegrilltem Fleisch und Gemüse."] {
-    alt="A delicious summer barbecue menu for warm summer evenings with grilled meat and vegetables.";
-}
-
-.blog-post img[alt="Blogbeitrag: Rezept für Spargel-Salat mit Erdbeeren und Balsamico."] {
-    alt="Blog post: Recipe for asparagus salad with strawberries and balsamic vinegar.";
-}
-
-.blog-post img[alt="Blogbeitrag: Rezept für Rhabarber-Crumble mit Vanillesauce."] {
-    alt="Blog post: Recipe for rhubarb crumble with vanilla sauce.";
-}
-
