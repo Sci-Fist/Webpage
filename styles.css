@@ -179,6 +179,7 @@ h2 {
     margin-bottom: 2rem;
     text-align: center;
     animation: fadeIn 1s ease-in-out forwards;
+    position: relative; /* Added for preview */
 }
 
 .portfolio-item:hover, .blog-post:hover {
@@ -227,3 +228,24 @@ footer {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+/* Blog Post Preview */
+.blog-post::before {
+    content: attr(data-preview); /* Show data-preview attribute content */
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap; /* Prevent text wrapping */
+    z-index: 1;
+}
+
+.blog-post:hover::before {
+    opacity: 1;
+}
