@@ -4,7 +4,7 @@ import { handleFormSubmission } from './modules/form.js';
 import { handleAnimations } from './modules/animations.js';
 import { handleImageError } from './modules/imageHandling.js';
 import { handleLoadingIndicator } from './modules/loading.js';
-import { handleTooltips } from './modules/tooltips.js'; // Import handleTooltips
+import { handleTooltips } from './modules/tooltips.js';
 
 const errorContainer = document.createElement('div');
 errorContainer.id = 'error-container';
@@ -16,7 +16,7 @@ try {
     handleBackToTop();
     handleFormSubmission();
     handleAnimations();
-    handleTooltips(); // Call handleTooltips
+    handleTooltips();
 
     const images = document.querySelectorAll('img');
     images.forEach(img => {
