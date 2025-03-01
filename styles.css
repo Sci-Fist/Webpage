@@ -10,10 +10,10 @@ body, h1, h2, h3, p, ul, li, form, input, textarea, button {
 }
 
 body {
-    font-family: 'Lora', serif; /* Or your chosen font */
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
     line-height: 1.6;
     background-color: #f8f5f0; /* Off-white/Cream */
-    color: #544e47;       /* Dark Brown/Olive */
+    color: #333;       /* Dark Gray */
     overflow-x: hidden; /* Prevent horizontal scroll */
     background-image: url('assets/linen-texture.png'); /* Replace with your texture image */
     background-repeat: repeat;
@@ -23,7 +23,7 @@ body {
 nav {
     background-color: #77ab59; /* Sage Green */
     color: #f8f5f0;       /* Off-white/Cream for text */
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 100; /* Ensure nav stays on top */
@@ -39,9 +39,11 @@ nav {
 }
 
 .logo {
-    font-family: 'Lora', serif; /* Or a slightly bolder version */
-    font-size: 1.7rem;
+    font-family: 'Playfair Display', serif; /* Or a slightly bolder version */
+    font-size: 1.8rem;
     font-weight: bold;
+    text-decoration: none;
+    color: #f8f5f0;
 }
 
 nav ul {
@@ -50,7 +52,7 @@ nav ul {
 }
 
 nav li {
-    margin-left: 20px;
+    margin-left: 2rem;
 }
 
 nav a {
@@ -58,6 +60,7 @@ nav a {
     text-decoration: none;
     padding: 0.5rem 0;
     transition: color 0.3s ease;
+    font-family: inherit; /* Inherit font from body */
 }
 
 nav a:hover {
@@ -71,9 +74,13 @@ nav a.active {
 /* Header / Hero Section */
 header {
     background: url('assets/hero-image.jpg') no-repeat center center/cover; /* Replace with your image */
-    color: #f8f5f0; /* Adjust text color if needed for image contrast */
+    color: #fff; /* White text for better contrast */
     text-align: center;
-    padding: 150px 20px;
+    padding: 200px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-content {
@@ -82,25 +89,30 @@ header {
 }
 
 header h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
+    font-weight: 700; /* Bold heading */
+    line-height: 1.2;
 }
 
 header p {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: 300; /* Lighter weight for paragraph */
 }
 
 /* Sections (About, Portfolio, Contact) */
 section {
-    padding: 6rem 20px;
+    padding: 4rem 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 section h2 {
-    font-size: 2.8rem;
+    font-size: 3rem;
     margin-bottom: 2rem;
     text-align: center;
+    font-weight: 700; /* Bold heading */
 }
 
 /* Portfolio */
@@ -110,12 +122,19 @@ section h2 {
     position: relative; /* For tooltips */
 }
 
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    grid-gap: 20px;
+}
+
 .portfolio-item img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
+    object-fit: cover; /* Ensure images fill the container */
 }
 
 .portfolio-item img:hover {
@@ -242,7 +261,7 @@ button[type="submit"]:hover {
 
 /* Footer */
 footer {
-    background-color: #544e47; /* Dark Brown/Olive */
+    background-color: #333; /* Dark Gray */
     color: #f8f5f0;
     text-align: center;
     padding: 1rem 0;
@@ -274,4 +293,27 @@ footer {
 .animated-element.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header {
+        padding: 100px 20px;
+    }
+    header h1 {
+        font-size: 3rem;
+    }
+    header p {
+        font-size: 1.4rem;
+    }
+    section h2 {
+        font-size: 2.5rem;
+    }
+    nav ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        align-items: center;
+    }
+    nav li {
+        margin: 1rem 0;
+    }
 }

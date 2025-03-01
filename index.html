@@ -8,7 +8,7 @@
     <title>Culinaut Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
@@ -19,7 +19,7 @@
 
     <nav>
         <div class="nav-container">
-            <div class="logo">Culinaut</div>
+            <a href="#home" class="logo">Culinaut</a>
             <ul>
                 <li><a href="#home" aria-label="Navigate to Home">Home</a></li>
                 <li><a href="#about" aria-label="Navigate to About">About</a></li>
@@ -44,15 +44,17 @@
 
         <section id="portfolio" class="animated-element">
             <h2>Portfolio</h2>
-            <p>Placeholder: This is where your portfolio items (images, descriptions) would go.</p>
-            <!-- Example Portfolio Item (can be repeated) -->
-            <div class="portfolio-item animated-element">
-                <img src="assets/placeholder.jpg" alt="Dish Name" data-tooltip-content="This is a delicious dish.">
-            </div>
+            <div class="portfolio-grid">
+                <!-- Example Portfolio Item (can be repeated) -->
+                <div class="portfolio-item animated-element">
+                    <img src="assets/placeholder.jpg" alt="Dish Name" data-tooltip-content="This is a delicious dish.">
+                </div>
 
-            <div class="portfolio-item animated-element">
-                <img src="assets/nonexistent.jpg" alt="Broken Image Example">
-                <span data-tooltip-content="This image is broken and will show a placeholder.">Tooltip for Broken Image</span>
+                <div class="portfolio-item animated-element">
+                    <img src="assets/nonexistent.jpg" alt="Broken Image Example">
+                    <span data-tooltip-content="This image is broken and will show a placeholder.">Tooltip for Broken Image</span>
+                </div>
+                <!-- Add more portfolio items here -->
             </div>
         </section>
 
