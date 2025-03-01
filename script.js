@@ -13,6 +13,9 @@ import { handleImageError } from './modules/imageHandling.js';
 // tooltips.js
 import { handleTooltips } from './modules/tooltips.js';
 
+// animations.js
+import { handleAnimations } from './modules/animations.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     // Hide loading indicator
     const loadingIndicator = document.getElementById('loading-indicator');
@@ -27,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     handleBackToTop();
     handleFormSubmission();
     handleTooltips();
+    handleAnimations();
 
     // Add event listeners to portfolio and blog images
     const portfolioImages = document.querySelectorAll('.portfolio-item img');

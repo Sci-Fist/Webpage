@@ -70,6 +70,10 @@ nav a:hover {
     background-color: #555;
 }
 
+nav a.active {
+    background-color: #555;
+}
+
 /* Header (Hero Section) */
 header {
     background: url('assets/hero-bg.jpg') no-repeat center center/cover; /* Replace with your image */
@@ -109,6 +113,14 @@ section {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;  /* Initially hide the element */
+    transform: translateY(20px); /* Move slightly down */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
+
+section.show {
+    opacity: 1; /* Show when the class 'show' is added */
+    transform: translateY(0); /* Move to original position */
 }
 
 h2 {
@@ -231,4 +243,65 @@ footer {
     header p {
         font-size: 1.1em;
     }
+}
+
+/* Portfolio Item */
+.portfolio-item {
+    margin-bottom: 20px;
+    position: relative; /* For tooltips */
+    opacity: 0;  /* Initially hide the element */
+    transform: translateY(20px); /* Move slightly down */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
+
+.portfolio-item.show {
+  opacity: 1; /* Show when the class 'show' is added */
+  transform: translateY(0); /* Move to original position */
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block; /* Remove any default inline spacing */
+}
+
+.portfolio-item .tooltip-content {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    white-space: nowrap;
+    z-index: 10;
+    display: none; /* Hidden by default */
+}
+
+.portfolio-item .tooltip-content.show {
+    display: block;
+}
+
+.portfolio-item:hover .tooltip-content {
+    display: block; /* Show on hover */
+}
+
+.portfolio-item.image-fallback img {
+    /* Styles to apply when an image fails to load */
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+.animated-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animated-element.show {
+    opacity: 1;
+    transform: translateY(0);
 }
