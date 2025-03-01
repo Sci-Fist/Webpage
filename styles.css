@@ -8,10 +8,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-@font-face {
-    font-family: 'Lora';
-    src: url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap') format('woff2');
-}
+/* Removed @font-face rule - use a link to Google Fonts instead */
 
 header {
     background-color: #282828;
@@ -58,6 +55,14 @@ h2 {
     grid-gap: 2rem;
 }
 
+/* Added media query for smaller screens */
+@media (max-width: 768px) {
+    .portfolio-grid, .blog-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
 .portfolio-item, .blog-post {
     background-color: #333;
     border: 1px solid #444;
@@ -83,10 +88,4 @@ footer {
     background-color: #282828;
     padding: 1rem;
     text-align: center;
-}
-
-@media (max-width: 768px) {
-    .portfolio-grid, .blog-grid {
-        grid-template-columns: 1fr;
-    }
 }
