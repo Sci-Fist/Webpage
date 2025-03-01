@@ -1,7 +1,7 @@
 /* Basic styles for the body */
 body {
     min-height: 100vh;
-    font-family: 'Lora', serif; /* A more natural-looking serif font */
+    font-family: 'Lora', serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -12,6 +12,7 @@ body {
     flex-direction: column;
     font-weight: 300;
     overflow-x: hidden;
+    font-size: 16px; /* Base font size */
 }
 
 /* Animations */
@@ -28,7 +29,7 @@ body {
 
 /* Intro Section */
 .intro {
-    background-image: url('../assets/hero-image.jpg'); /* Replace with a nature-themed hero image */
+    background-image: url('../assets/hero-image.jpg'); /* Replace with a high-quality nature-themed hero image */
     background-size: cover;
     background-position: center;
     color: white;
@@ -39,6 +40,7 @@ body {
     align-items: center;
     position: relative;
     background-color: #558B2F; /* Dark olive green */
+    overflow: hidden; /* Hide overflowing content */
 }
 
 .intro::before {
@@ -67,12 +69,13 @@ body {
     font-weight: bold;
     text-decoration: none;
     display: inline-block;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     animation: fadeIn 1s ease-in-out forwards;
 }
 
 .cta-button:hover {
     background-color: #D0E8D4; /* Lighter green on hover */
+    transform: scale(1.05); /* Subtle hover effect */
 }
 
 @keyframes fadeIn {
@@ -147,7 +150,7 @@ h1, h2, h3 {
     margin-bottom: 1rem;
     color: #333;
     text-align: center;
-    font-family: 'Lora', serif; /* Using Lora serif font */
+    font-family: 'Lora', serif;
     animation: fadeIn 1s ease-in-out forwards;
     position: relative;
     z-index: 10;
@@ -437,5 +440,63 @@ body {
 
 h1, h2, h3 {
     color: var(--text-color);
+}
+
+/* Improved responsiveness */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 1.4rem;
+    }
+    h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+    h1 {
+        font-size: 1.6rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Add subtle animations */
+.portfolio-item img, .blog-post img {
+    transition: transform 0.3s ease;
+    transform: scale(1); /* Initial scale */
+}
+
+.portfolio-item:hover img, .blog-post:hover img {
+    transform: scale(1.05); /* Subtle hover effect */
+}
+
+/* Improved alt text */
+.portfolio-item img[alt="Frühlingsmenü: Ein leichtes und frisches Menü mit saisonalen Zutaten wie Spargel, Erdbeeren und Rhabarber."] {
+    alt="A light and fresh spring menu with seasonal ingredients such as asparagus, strawberries, and rhubarb.";
+}
+
+.portfolio-item img[alt="Sommer-Grillmenü: Ein köstliches Grillmenü für warme Sommerabende mit gegrilltem Fleisch und Gemüse."] {
+    alt="A delicious summer barbecue menu for warm summer evenings with grilled meat and vegetables.";
+}
+
+.blog-post img[alt="Blogbeitrag: Rezept für Spargel-Salat mit Erdbeeren und Balsamico."] {
+    alt="Blog post: Recipe for asparagus salad with strawberries and balsamic vinegar.";
+}
+
+.blog-post img[alt="Blogbeitrag: Rezept für Rhabarber-Crumble mit Vanillesauce."] {
+    alt="Blog post: Recipe for rhubarb crumble with vanilla sauce.";
 }
 
