@@ -5,61 +5,62 @@
 export const handleLoadingIndicator = (timeoutMs = 10000) => {
     // Get the loading indicator element
     const loadingIndicator = document.getElementById('loading-indicator');
+    // Get the main content element
+    const mainContent = document.getElementById('main-content');
     // Check if the loading indicator element exists
     if (!loadingIndicator) {
         console.error('Loading indicator element not found! Check if you have an element with the id "loading-indicator" in your HTML.');
+        return;
+    }
+    // Check if the main content element exists
+    if (!mainContent) {
+        console.error('Main content element not found! Check if you have an element with the id "main-content" in your HTML.');
         return;
     }
 
     // Show the loading indicator
     loadingIndicator.style.display = 'block';
 
-    // Initialize counters for resources
-    let resourcesToLoad = 0;
-    let resourcesLoaded = 0;
+    //Resource tracking using Promises
+    const promises = [];
 
-    // Function to track the loading status of a resource
     const trackResource = (resource, resourceType) => {
-        resourcesToLoad++; // Increment the total number of resources to load
-        resource.onload = () => {
-            resourcesLoaded++; // Increment the number of loaded resources
-            checkAllLoaded(); // Check if all resources have loaded
-        };
-        resource.onerror = () => {
-            console.error(`Error loading ${resourceType}: ${resource.src || resource.href}`); // Log an error if a resource fails to load
-            resourcesLoaded++; // Increment the number of loaded resources even if there was an error
-            checkAllLoaded(); // Check if all resources have loaded
-        };
+        return new Promise((resolve, reject) => {
+            resource.onload = () => resolve();
+            resource.onerror = () => reject(new Error(`Error loading ${resourceType}: ${resource.src || resource.href}`));
+        });
     };
 
-    // Track loading status of images
     const images = document.querySelectorAll('img');
-    images.forEach(img => trackResource(img, 'image'));
+    images.forEach(img => promises.push(trackResource(img, 'image')));
 
-    // Track loading status of stylesheets
     const styleSheets = document.querySelectorAll('link[rel="stylesheet"]');
-    styleSheets.forEach(link => trackResource(link, 'stylesheet'));
+    styleSheets.forEach(link => promises.push(trackResource(link, 'stylesheet')));
 
-    // Track loading status of scripts
     const scripts = document.querySelectorAll('script');
-    scripts.forEach(script => trackResource(script, 'script'));
+    scripts.forEach(script => promises.push(trackResource(script, 'script')));
 
-    // Set a timeout to hide the loading indicator after a certain time, even if not all resources have loaded
+
+    Promise.allSettled(promises)
+        .then(() => {
+            console.log(`All resources loaded. resourcesLoaded: ${resourcesLoaded}, resourcesToLoad: ${resourcesToLoad}`); //Debugging statement
+            removeLoadingIndicator();
+        })
+        .catch(error => {
+            console.error("Error loading resources:", error);
+            removeLoadingIndicator(); //Remove loading indicator even if there are errors
+        });
+
+
     const timeoutId = setTimeout(removeLoadingIndicator, timeoutMs);
 
-    // Function to check if all resources have loaded
-    function checkAllLoaded() {
-        if (resourcesLoaded >= resourcesToLoad) {
-            clearTimeout(timeoutId); // Clear the timeout if all resources have loaded
-            removeLoadingIndicator(); // Hide the loading indicator
-        }
-    }
-
-    // Function to hide the loading indicator
     function removeLoadingIndicator() {
         if (loadingIndicator) {
             loadingIndicator.style.display = 'none';
-            setTimeout(() => loadingIndicator.remove(), 500); // Remove the loading indicator element after a short delay
+            setTimeout(() => {
+                loadingIndicator.remove();
+                mainContent.style.display = 'block'; // Show main content
+            }, 500); // Remove the loading indicator element after a short delay
         }
     }
 };
