@@ -3,8 +3,10 @@ import { handleBackToTop } from './modules/backToTop.js';
 import { handleFormSubmission } from './modules/form.js';
 import { handleAnimations } from './modules/animations.js';
 import { handleImageError } from './modules/imageHandling.js';
+import { handleLoadingIndicator } from './modules/loading.js';
 
 try {
+    handleLoadingIndicator(); // Call loading indicator first
     handleNavigation();
     handleBackToTop();
     handleFormSubmission();

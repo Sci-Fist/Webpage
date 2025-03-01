@@ -13,7 +13,9 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-
+    <div id="loading-indicator" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(248, 245, 240, 0.8); display: flex; justify-content: center; align-items: center; z-index: 1000;">
+        <span style="font-size: 2em;">Loading...</span>
+    </div>
     <nav>
         <div class="nav-container">
             <a href="#home" class="logo">Culinaut</a>
@@ -47,7 +49,6 @@
                 </div>
                 <div class="portfolio-item animated-element">
                     <img src="assets/nonexistent.jpg" alt="Broken Image Example" loading="lazy">
-                    <span class="image-error">Bild konnte nicht geladen werden.</span>
                 </div>
             </div>
         </section>
