@@ -22,3 +22,4 @@ window.addEventListener('load', () => {
         console.error('Error during initialization:', error);
     }
 });
+
