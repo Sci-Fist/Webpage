@@ -7,34 +7,35 @@ export const handleLoadingIndicator = (timeoutMs = 10000) => {
 
     loadingIndicator.style.display = 'block';
 
-    let totalResources = 0;
-    let loadedResources = 0;
+    let resourcesToLoad = 0;
+    let resourcesLoaded = 0;
 
-    const trackResource = (resource) => {
-        totalResources++;
+    const trackResource = (resource, resourceType) => {
+        resourcesToLoad++;
         resource.onload = () => {
-            loadedResources++;
+            resourcesLoaded++;
             checkAllLoaded();
         };
         resource.onerror = () => {
-            loadedResources++;
+            console.error(`Error loading ${resourceType}: ${resource.src || resource.href}`);
+            resourcesLoaded++;
             checkAllLoaded();
         };
     };
 
     const images = document.querySelectorAll('img');
-    images.forEach(img => trackResource(img));
+    images.forEach(img => trackResource(img, 'image'));
 
     const styleSheets = document.querySelectorAll('link[rel="stylesheet"]');
-    styleSheets.forEach(link => trackResource(link));
+    styleSheets.forEach(link => trackResource(link, 'stylesheet'));
 
     const scripts = document.querySelectorAll('script');
-    scripts.forEach(script => trackResource(script));
+    scripts.forEach(script => trackResource(script, 'script'));
 
     const timeoutId = setTimeout(removeLoadingIndicator, timeoutMs);
 
     function checkAllLoaded() {
-        if (loadedResources >= totalResources) { //Use >= to handle cases where totalResources might be 0
+        if (resourcesLoaded >= resourcesToLoad) {
             clearTimeout(timeoutId);
             removeLoadingIndicator();
         }
@@ -43,11 +44,7 @@ export const handleLoadingIndicator = (timeoutMs = 10000) => {
     function removeLoadingIndicator() {
         if (loadingIndicator) {
             loadingIndicator.style.display = 'none';
-            setTimeout(() => {
-                if (loadingIndicator) {
-                    loadingIndicator.remove();
-                }
-            }, 500);
+            setTimeout(() => loadingIndicator.remove(), 500);
         }
     }
 };
