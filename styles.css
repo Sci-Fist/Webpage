@@ -65,7 +65,7 @@ h1, h2 {
 
 /* Styles for h1 headings */
 h1 {
-    font-size: 2.5rem; /* Reduced font size for better responsiveness */
+    font-size: 2.5rem;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -81,6 +81,9 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 2rem;
+    background-color: #f2f2f2; /* Light gray background for grids */
+    padding: 2rem; /* Added padding around grids */
+    border-radius: 8px; /* Added border radius for a softer look */
 }
 
 /* Media queries for responsiveness */
@@ -101,17 +104,17 @@ h2 {
         font-size: 1.8rem;
     }
     main {
-        padding: 0 1rem; /* Reduced padding for smaller screens */
+        padding: 0 1rem;
     }
     header {
-        padding: 1rem; /* Reduced padding for smaller screens */
+        padding: 1rem;
     }
     nav {
-        flex-direction: column; /* Stack navigation links vertically */
+        flex-direction: column;
         align-items: center;
     }
     nav a {
-        margin: 0.5rem 0; /* Added margin for vertical spacing */
+        margin: 0.5rem 0;
     }
 }
 
