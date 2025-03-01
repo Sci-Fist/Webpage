@@ -1,30 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Culinaut - Chef & Food Photographer specializing in sustainable cuisine.">
+    <meta name="author" content="Your Name Here">
     <title>Culinaut Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 <body>
+    <div id="loading-indicator">
+        Loading...
+    </div>
+
     <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="logo">Culinaut</div>
+            <ul>
+                <li><a href="#home" aria-label="Navigate to Home">Home</a></li>
+                <li><a href="#about" aria-label="Navigate to About">About</a></li>
+                <li><a href="#portfolio" aria-label="Navigate to Portfolio">Portfolio</a></li>
+                <li><a href="#contact" aria-label="Navigate to Contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <header>
-        <h1>Welcome to Culinaut</h1>
-        <p>Chef & Food Photographer specializing in sustainable cuisine.</p>
+    <header id="home">
+        <div class="hero-content">
+            <h1>Culinaut</h1>
+            <p>Chef & Food Photographer specializing in sustainable cuisine.</p>
+        </div>
     </header>
 
     <main>
-        <!-- Main content will go here -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>This is a placeholder for the about section.</p>
+        </section>
+
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <p>This is a placeholder for the portfolio section.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <div id="formMessage" class="form-message"></div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
     </main>
+
+    <button id="backToTop">Back to Top</button>
 
     <footer>
         <p>&copy; 2023 Culinaut</p>
