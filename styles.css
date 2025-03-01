@@ -18,7 +18,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
+    padding: 1rem 2rem; /* Adjusted padding */
     text-align: center;
 }
 
@@ -46,6 +46,7 @@ main {
     max-width: 960px;
     padding: 0 2rem;
     margin: 2rem auto;
+    flex: 1; /* Added flex: 1 to allow main content to take up available space */
 }
 
 /* Styles for sections */
@@ -151,4 +152,13 @@ footer {
 
 .footer__copyright {
     margin: 0;
+}
+
+/* Added styles for portfolio items */
+.portfolio-item--spring {
+    background-color: #333;
+}
+
+.portfolio-item--summer {
+    background-color: #444;
 }
