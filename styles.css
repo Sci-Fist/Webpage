@@ -1,12 +1,12 @@
 /* Basic styles for the body */
 body {
     min-height: 100vh;
-    font-family: 'Lora', serif;
+    font-family: 'Lora', serif; /* Elegantes Serifenschriftart */
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #121212;
-    color: #d3d3d3;
+    background-color: #f8f8f8; /* Hellerer Hintergrund für besseren Kontrast */
+    color: #333; /* Dunklere Textfarbe */
     transition: background-color 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -14,13 +14,16 @@ body {
 }
 
 /* Intro Section */
-#intro {
-    background-image: url('../assets/background-image.jpg'); /* Replace with your background image */
+.intro {
+    background-image: url('../assets/hero-image.jpg'); /* Ersetzen Sie mit Ihrem Hero-Bild */
     background-size: cover;
     background-position: center;
     color: white;
     text-align: center;
-    padding: 100px 0;
+    padding: 150px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .intro-content {
@@ -29,27 +32,30 @@ body {
 }
 
 .cta-button {
-    background-color: #f0c808;
-    color: #121212;
+    background-color: #333; /* Dunkle Schaltfläche */
+    color: white;
     padding: 1rem 2rem;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
+    text-decoration: none; /* Wichtig für <a> Elemente */
+    display: inline-block; /* Für bessere Gestaltung */
     transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-    background-color: #e0b808;
+    background-color: #555;
 }
+
 
 /* Styles for the header */
 header {
-    background-color: #1a1a1a;
+    background-color: #333; /* Dunkle Kopfzeile */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 4rem;
+    padding: 1rem 4rem;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
@@ -63,7 +69,7 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: #d3d3d3;
+    color: white; /* Weiße Links */
     font-weight: bold;
     transition: color 0.3s ease, background-color 0.3s ease;
     padding: 0.8rem 1.8rem;
@@ -72,9 +78,8 @@ nav a {
 }
 
 nav a:hover {
-    color: #121212;
-    background-color: #f0c808;
-    border-color: #f0c808;
+    color: #333; /* Dunklerer Text beim Hover */
+    background-color: white; /* Weißer Hintergrund beim Hover */
 }
 
 /* Styles for the main content area */
@@ -94,7 +99,7 @@ section {
 h1, h2 {
     font-weight: 700;
     margin-bottom: 1.5rem;
-    color: #f0f0f0;
+    color: #333; /* Dunklere Überschriften */
     text-align: center;
     font-family: 'Lora', serif;
     text-shadow: 0 1px 2px rgba(0,0,0,0.3);
@@ -113,7 +118,7 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 3rem;
-    background-color: #1a1a1a;
+    background-color: #fff; /* Weißer Hintergrund für die Grids */
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -134,8 +139,8 @@ h2 {
 
 /* Styles for portfolio items and blog posts */
 .portfolio-item, .blog-post {
-    background-color: #222;
-    border: 1px solid #333;
+    background-color: #fff; /* Weißer Hintergrund für die Artikel */
+    border: 1px solid #ddd;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -160,16 +165,16 @@ h2 {
 .details-link {
     display: block;
     margin-top: 1rem;
-    color: #f0c808;
+    color: #333; /* Dunkle Links */
     text-decoration: none;
 }
 
 /* Styles for the footer */
 footer {
-    background-color: #1a1a1a;
+    background-color: #333; /* Dunkle Fußzeile */
     padding: 1rem;
     text-align: center;
-    color: #aaa;
+    color: white; /* Weiße Textfarbe */
 }
 
 .header__title {
@@ -181,11 +186,11 @@ footer {
 }
 
 .portfolio-item--spring {
-    background-color: #3a3a3a;
+    background-color: #e0f7fa; /* Hellblauer Hintergrund */
 }
 
 .portfolio-item--summer {
-    background-color: #444;
+    background-color: #ffe0b2; /* Hellgelber Hintergrund */
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');

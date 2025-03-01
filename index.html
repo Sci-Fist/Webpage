@@ -1,29 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio showcasing culinary menus and recipes." />
-    <title>Culinary Portfolio - Menus & Recipes</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kulinarisches Portfolio - Menüs & Rezepte von [Ihr Name], Ihrem Koch für regionale und nachhaltige Küche.">
+    <title>Mein Koch-Portfolio - [Ihr Name]</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 <body>
     <header class="header">
         <h1 class="header__title">Mein Koch-Portfolio</h1>
-        <nav class="nav" aria-label="Main navigation">
-            <a class="nav__link" href="#portfolio" aria-label="Go to Portfolio section">Portfolio</a>
-            <a class="nav__link" href="#blog" aria-label="Go to Blog section">Blog</a>
-            <a class="nav__link" href="#kontakt" aria-label="Go to Contact section">Kontakt</a>
+        <nav class="nav" aria-label="Hauptnavigation">
+            <a class="nav__link" href="#vorstellung" aria-label="Zur Vorstellung">Vorstellung</a>
+            <a class="nav__link" href="#portfolio" aria-label="Zum Portfolio">Portfolio</a>
+            <a class="nav__link" href="#blog" aria-label="Zum Blog">Blog</a>
+            <a class="nav__link" href="#kontakt" aria-label="Zum Kontakt">Kontakt</a>
         </nav>
     </header>
 
     <main>
-        <section id="intro">
+        <section id="vorstellung" class="intro">
             <div class="intro-content">
                 <h2>Willkommen!</h2>
-                <p>Ich bin [Ihr Name], Ihr Koch für [Art der Kocherei, z.B. regionale und nachhaltige Küche]. Entdecken Sie meine Menüs und Blogbeiträge.</p>
-                <button class="cta-button" onclick="window.location.href='#portfolio'">Meine Menüs ansehen</button>
+                <p>Ich bin [Ihr Name], Ihr Koch für regionale und nachhaltige Küche. Entdecken Sie meine Menüs und Blogbeiträge, die von meiner Leidenschaft für frische, saisonale Zutaten geprägt sind.</p>
+                <p>Ich biete Ihnen individuelle Menüs für jeden Anlass, von privaten Dinnerpartys bis hin zu Firmenevents.  Meine Spezialitäten sind [Nennen Sie Ihre Spezialitäten, z.B. vegetarische Gerichte, mediterrane Küche, etc.].</p>
+                <a href="#portfolio" class="cta-button">Meine Menüs ansehen</a>
             </div>
         </section>
 
@@ -31,46 +33,47 @@
             <h2>Portfolio</h2>
             <div class="portfolio-grid">
                 <article class="portfolio-item portfolio-item--spring">
-                    <img src="../assets/happy spoons.jpg" alt="Frühlingsmenü: Ein leichtes und frisches Menü mit saisonalen Zutaten wie Spargel, Erdbeeren und Rhabarber." />
-                    <h3>Menü 1: Frühlingsmenü</h3>
-                    <p>Dieses Frühlingsmenü bietet leichte und frische Gerichte mit saisonalen Zutaten wie Spargel, Erdbeeren und Rhabarber. Perfekt für ein besonderes Abendessen oder eine Frühlingsfeier.</p>
+                    <img src="../assets/happy-spoons.jpg" alt="Frühlingsmenü: Ein leichtes und frisches Menü mit saisonalen Zutaten wie Spargel, Erdbeeren und Rhabarber.">
+                    <h3>Frühlingsmenü</h3>
+                    <p>Leichte und frische Gerichte mit Spargel, Erdbeeren und Rhabarber. Perfekt für ein besonderes Abendessen.</p>
                     <a href="#" class="details-link">Details</a>
                 </article>
                 <article class="portfolio-item portfolio-item--summer">
-                    <img src="../assets/happy spoons.jpg" alt="Sommer-Grillmenü: Ein köstliches Grillmenü für warme Sommerabende mit gegrilltem Fleisch und Gemüse." />
-                    <h3>Menü 2: Sommergrillen</h3>
-                    <p>Genießen Sie ein köstliches Grillmenü an warmen Sommerabenden. Dieses Menü bietet eine Auswahl an gegrilltem Fleisch und Gemüse, perfekt für eine entspannte Grillparty.</p>
+                    <img src="../assets/happy-spoons.jpg" alt="Sommer-Grillmenü: Ein köstliches Grillmenü für warme Sommerabende mit gegrilltem Fleisch und Gemüse.">
+                    <h3>Sommer-Grillmenü</h3>
+                    <p>Köstliches Grillmenü für warme Sommerabende mit gegrilltem Fleisch und Gemüse. Perfekt für eine entspannte Grillparty.</p>
                     <a href="#" class="details-link">Details</a>
                 </article>
-            </div>
+                </div>
         </section>
 
         <section id="blog">
             <h2>Blog</h2>
             <div class="blog-grid">
                 <article class="blog-post">
-                    <img src="../assets/happy spoons.jpg" alt="Blogbeitrag: Regionale Küche im Frühling mit saisonalen Rezepten und Inspirationen." />
-                    <h3>Blogbeitrag 1: Regionale Küche im Frühling</h3>
-                    <p>Entdecken Sie die Vielfalt der regionalen Küche im Frühling mit saisonalen Rezepten und Inspirationen.</p>
+                    <img src="../assets/happy-spoons.jpg" alt="Blogbeitrag: Regionale Küche im Frühling mit saisonalen Rezepten und Inspirationen.">
+                    <h3>Regionale Küche im Frühling</h3>
+                    <p>Saisonale Rezepte und Inspirationen für die Frühlingsküche.</p>
                     <a href="blogposts/blog-post1.html">Weiterlesen</a>
                 </article>
                 <article class="blog-post">
-                    <img src="../assets/happy spoons.jpg" alt="Blogbeitrag: Nachhaltiges und regionales Kochen mit Tipps für umweltfreundliche Praktiken." />
-                    <h3>Blogbeitrag 2: Nachhaltiges und regionales Kochen</h3>
-                    <p>Erfahren Sie, wie Sie durch nachhaltiges und regionales Kochen einen Beitrag zum Umweltschutz leisten und gleichzeitig köstliche Gerichte genießen können.</p>
+                    <img src="../assets/happy-spoons.jpg" alt="Blogbeitrag: Nachhaltiges und regionales Kochen mit Tipps für umweltfreundliche Praktiken.">
+                    <h3>Nachhaltiges und regionales Kochen</h3>
+                    <p>Tipps für umweltfreundliches Kochen mit regionalen Zutaten.</p>
                     <a href="blogposts/blog-post2.html">Weiterlesen</a>
                 </article>
             </div>
         </section>
 
         <section id="kontakt">
-            <h2>Kontaktieren Sie mich</h2>
-            <p>Email: example@example.com<br />Telefon: +49 123 456789</p>
+            <h2>Kontakt</h2>
+            <p>Email: [Ihre E-Mail-Adresse]<br>Telefon: [Ihre Telefonnummer]</p>
+            <p>Adresse: [Ihre Adresse]</p>
         </section>
     </main>
 
     <footer class="footer">
-        <p class="footer__copyright">&copy; 2024 Ihr Name</p>
+        <p class="footer__copyright">&copy; 2024 [Ihr Name]</p>
     </footer>
 </body>
 </html>
