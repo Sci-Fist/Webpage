@@ -476,3 +476,8 @@ h1, h2, h3 {
 .blog-post img {
     margin-bottom: 1rem;
 }
+
+/*Added for blog-post image hover effect*/
+.blog-post img:hover {
+    transform: scale(1.05);
+}
