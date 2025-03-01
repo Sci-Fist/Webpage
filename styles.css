@@ -145,7 +145,7 @@ section {
 h1, h2, h3 {
     font-weight: 700;
     margin-bottom: 1rem;
-    color: #333;
+    color: #fff; /* White text for headings */
     text-align: center;
     font-family: 'UniSpace', sans-serif;
     animation: fadeIn 1s ease-in-out forwards;
