@@ -247,6 +247,7 @@ footer {
     align-items: center;
     font-size: 1.5rem;
     z-index: 1000;
+    display: none; /* Initially hidden */
 }
 
 .animated-element {
