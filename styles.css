@@ -1,6 +1,4 @@
 /* ... your existing CSS ... */
-
-body {
-    font-family: monospace;
-    /* ... rest of your body styles ... */
+.tooltip-active {
+  background-color: lightblue; /* Example styling */
 }

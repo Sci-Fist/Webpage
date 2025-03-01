@@ -1,10 +1,11 @@
 export const handleTooltips = () => {
     const createTooltip = (element) => {
         const tooltip = element.querySelector('[data-tooltip-content]');
-        if (!tooltip) return;
+        if (!tooltip || !element.parentElement) return; //Added null check
 
         element.addEventListener('click', () => {
             tooltip.classList.toggle('show');
+            element.parentElement.classList.toggle('tooltip-active'); //Added visual feedback
         });
     };
 
