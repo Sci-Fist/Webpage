@@ -5,42 +5,51 @@ export const handleLoadingIndicator = (timeoutMs = 10000) => {
         return;
     }
 
-    loadingIndicator.style.display = 'block'; // Show the loading indicator initially
+    loadingIndicator.style.display = 'block';
+
+    //Improved loading tracking
+    let totalResources = 0;
+    let loadedResources = 0;
+
+    const trackResource = (resource) => {
+        totalResources++;
+        resource.onload = () => {
+            loadedResources++;
+            checkAllLoaded();
+        };
+        resource.onerror = () => {
+            loadedResources++;
+            checkAllLoaded();
+        };
+    };
 
     const images = document.querySelectorAll('img');
-    let loadedImages = 0;
-    const totalImages = images.length;
+    images.forEach(img => trackResource(img));
 
-    if (totalImages === 0) {
-        removeLoadingIndicator(); // No images, remove immediately
-        return;
-    }
+    //Track other resources (CSS, JS) -  This requires knowing how your CSS and JS are loaded.
+    //Example:  If you load CSS via <link> tags, you could add event listeners to those links.
+    const styleSheets = document.querySelectorAll('link[rel="stylesheet"]');
+    styleSheets.forEach(link => trackResource(link));
+
+    //Example: If you load JS via <script> tags, you could add event listeners to those scripts.
+    const scripts = document.querySelectorAll('script');
+    scripts.forEach(script => trackResource(script));
+
 
     const timeoutId = setTimeout(removeLoadingIndicator, timeoutMs);
 
-    images.forEach(img => {
-        img.onload = () => {
-            loadedImages++;
-            checkAllLoaded();
-        };
-        img.onerror = () => {
-            loadedImages++;
-            checkAllLoaded();
-        };
-    });
-
     function checkAllLoaded() {
-        if (loadedImages === totalImages) {
+        if (loadedResources === totalResources) {
             clearTimeout(timeoutId);
             removeLoadingIndicator();
         }
     }
 
     function removeLoadingIndicator() {
-        if (loadingIndicator) { // Check if the element still exists
+        if (loadingIndicator) {
             loadingIndicator.style.display = 'none';
             setTimeout(() => {
-                if (loadingIndicator) { // Check again before removing
+                if (loadingIndicator) {
                     loadingIndicator.remove();
                 }
             }, 500);
