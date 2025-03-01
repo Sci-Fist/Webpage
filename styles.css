@@ -11,7 +11,7 @@ body, h1, h2, h3, p, ul, li, form, input, textarea, button {
 
 body {
     font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;
+    line-height: 1.7; /* Slightly increased line height for readability */
     background-color: #f8f5f0;
     color: #333;
     overflow-x: hidden;
@@ -19,13 +19,15 @@ body {
     background-repeat: repeat;
 }
 
+/* Navigation */
 nav {
-    background-color: #77ab59;
-    color: #f8f5f0;
-    padding: 1rem 0;
+    background-color: #77ab59; /* Same as before, but now using hex code*/
+    color: #fff;
+    padding: 1.2rem 0; /* Slightly more padding */
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .nav-container {
@@ -39,10 +41,15 @@ nav {
 
 .logo {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-size: 2rem; /* Slightly larger logo */
+    font-weight: 700; /* More emphasis */
     text-decoration: none;
     color: #f8f5f0;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: #ddd;
 }
 
 nav ul {
@@ -57,134 +64,200 @@ nav li {
 nav a {
     color: #f8f5f0;
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.2rem; /* Slightly more padding */
     transition: color 0.3s ease, background-color 0.3s ease;
     font-family: inherit;
-    border-radius: 4px;
+    border-radius: 6px;
+    display: block; /* Make the entire area clickable */
 }
 
-nav a:hover {
-    color: #ddd;
-    background-color: rgba(255, 255, 255, 0.1);
+nav a:hover,
+nav a:focus {
+    color: #fff; /* More contrast on hover/focus */
+    background-color: rgba(255, 255, 255, 0.15); /* Increased background for better visibility */
+    outline: none; /* Remove default focus outline */
 }
 
 nav a.active {
-    font-weight: bold;
+    font-weight: 700;
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+/* Header */
 header {
     background: url('assets/hero-image.jpg') no-repeat center center/cover;
     color: #fff;
     text-align: center;
-    padding: 200px 20px;
+    padding: 220px 20px; /* Increased padding */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative; /* For the overlay */
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Darker overlay */
+    z-index: 1; /* Place the overlay behind the content */
 }
 
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
+    z-index: 2; /* Ensure the content is above the overlay */
+    position: relative; /* Needed for z-index to work correctly */
 }
 
 header h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
+    font-size: 4.5rem; /* Slightly larger */
+    margin-bottom: 1.2rem;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.1; /* Reduced line height */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* subtle shadow */
 }
 
 header p {
-    font-size: 1.6rem;
+    font-size: 1.8rem; /* Slightly larger */
     font-style: italic;
-    font-weight: 300;
+    font-weight: 400; /* Slightly bolder */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+/* Sections */
 section {
-    padding: 4rem 20px;
+    padding: 5rem 20px; /* Increased padding */
     max-width: 1200px;
     margin: 0 auto;
 }
 
 section h2 {
     font-size: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem; /* Increased margin */
     text-align: center;
     font-weight: 700;
+    color: #333; /* Ensure heading color is consistent */
 }
 
+/* Portfolio */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 20px;
+    grid-gap: 25px; /* Increased gap */
 }
 
 .portfolio-item {
-    margin-bottom: 3rem;
+    margin-bottom: 0; /* Remove bottom margin, handled by grid gap */
     text-align: center;
+    position: relative; /* For the overlay */
+    overflow: hidden; /* Hide any overflowing content */
 }
 
 .portfolio-item img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    border-radius: 10px; /* Slightly more rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     object-fit: cover;
+    display: block; /* Prevents extra space below the image */
 }
 
 .portfolio-item img:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Image Fallback */
+.portfolio-item.image-fallback {
+    background-color: #f0f0f0; /* Light gray background for fallback */
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.portfolio-item.image-fallback img {
+    display: none; /* Hide the broken image */
+}
+
+.portfolio-item.image-fallback span {
+    color: #777;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Form */
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem; /* Increased margin */
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
+    margin-bottom: 0.75rem;
+    font-weight: 600; /* Slightly bolder labels */
+    color: #555; /* Darker label color */
 }
 
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group textarea {
     width: 100%;
-    padding: 0.75rem;
+    padding: 1rem; /* Increased padding */
     border: 1px solid #ccc;
-    border-radius: 6px;
+    border-radius: 8px; /* More rounded corners */
     font-family: inherit;
     font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: #a3b18a; /* Highlight on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(163, 177, 138, 0.5);
 }
 
 .form-group textarea {
     resize: vertical;
+    min-height: 150px; /* Added min-height */
 }
 
 button[type="submit"] {
     background-color: #a3b18a;
     color: #f8f5f0;
-    padding: 0.75rem 1.5rem;
+    padding: 0.85rem 1.75rem; /* Slightly more padding */
     border: none;
-    border-radius: 6px;
+    border-radius: 8px; /* More rounded corners */
     cursor: pointer;
     font-family: inherit;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+    font-size: 1.1rem; /* Slightly larger */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-button[type="submit"]:hover {
+button[type="submit"]:hover,
+button[type="submit"]:focus {
     background-color: #80946e;
+    transform: translateY(-2px);
+    outline: none;
 }
 
 .form-message {
-    margin-top: 1rem;
-    padding: 0.75rem;
-    border-radius: 4px;
-    font-weight: bold;
+    margin-top: 1.2rem;
+    padding: 1rem; /* Increased padding */
+    border-radius: 6px;
+    font-weight: 600;
     text-align: center;
 }
 
@@ -203,6 +276,7 @@ button[type="submit"]:hover {
     border-color: #dc3545;
 }
 
+/* Back to Top Button */
 #backToTop {
     position: fixed;
     bottom: 20px;
@@ -211,34 +285,37 @@ button[type="submit"]:hover {
     color: #f8f5f0;
     border: none;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.3rem; /* Slightly larger */
     z-index: 99;
     display: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 #backToTop:hover {
     background-color: #80946e;
 }
 
+/* Footer */
 footer {
     background-color: #333;
     color: #f8f5f0;
     text-align: center;
-    padding: 1rem 0;
-    font-size: 0.9rem;
+    padding: 1.3rem 0; /* Increased padding */
+    font-size: 0.95rem; /* Slightly larger */
 }
 
+/* Animations */
 .animated-element {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Slightly longer transitions */
 }
 
 .animated-element.show {
@@ -246,42 +323,57 @@ footer {
     transform: translateY(0);
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
     header {
-        padding: 100px 20px;
+        padding: 120px 20px; /* Reduced padding */
     }
+
     header h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
+
     header p {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
+
+    section {
+        padding: 4rem 15px;
+    }
+
     section h2 {
-        font-size: 2.5rem;
+        font-size: 2.7rem;
     }
+
     nav ul {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start; /* Align items to the start */
     }
+
     nav li {
-        margin: 1rem 0;
+        margin: 0.8rem 0; /* Reduced margin */
     }
+
     nav a {
-        padding: 1rem 0;
+        padding: 0.75rem 0;
+        text-align: left; /* Align text to the left */
     }
 }
 
 @media (max-width: 480px) {
     header h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
+
     header p {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
+
     section {
         padding: 3rem 15px;
     }
+
     section h2 {
-        font-size: 2rem;
+        font-size: 2.3rem;
     }
 }
