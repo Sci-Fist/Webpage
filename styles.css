@@ -249,16 +249,45 @@ footer {
     transform: translateX(-50%);
     background-color: #333;
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 1rem 2rem;
     border-radius: 8px;
     opacity: 0;
-    transition: opacity 0.3s ease;
-    white-space: nowrap;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: pre-wrap; /* Allow text wrapping */
     z-index: 1;
+    max-width: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100px;
 }
 
 .blog-post:hover::before {
     opacity: 1;
+    transform: translateX(-50%) translateY(-110px); /* Adjust position on hover */
+}
+
+.blog-post:hover::before button {
+    margin-top: 0.5rem;
+}
+
+.blog-post::before button {
+    background-color: #f0c808;
+    color: #121212;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.blog-post::before button:hover {
+    background-color: #e0b808;
 }
 
 /* Blog Content Styles */
