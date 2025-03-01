@@ -6,16 +6,19 @@
     <meta name="description" content="Kulinarisches Portfolio - Menüs & Rezepte.">
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blog-styles.css">  <!-- Added for blog styling -->
     <script src="script.js" defer></script>
 </head>
 <body>
     <header class="header">
         <h1 class="header__title">Portfolio</h1>
-        <nav class="nav" aria-label="Hauptnavigation">
-            <a class="nav__link" href="#vorstellung" aria-label="Zur Vorstellung">Vorstellung</a>
-            <a class="nav__link" href="#portfolio" aria-label="Zum Portfolio">Portfolio</a>
-            <a class="nav__link" href="#blog" aria-label="Zum Blog">Blog</a>
-            <a class="nav__link" href="#kontakt" aria-label="Zum Kontakt">Kontakt</a>
+        <nav class="nav" aria-label="Hauptnavigation" role="navigation">
+            <ul>
+                <li><a class="nav__link" href="#vorstellung" aria-label="Zur Vorstellung">Vorstellung</a></li>
+                <li><a class="nav__link" href="#portfolio" aria-label="Zum Portfolio">Portfolio</a></li>
+                <li><a class="nav__link" href="#blog" aria-label="Zum Blog">Blog</a></li>
+                <li><a class="nav__link" href="#kontakt" aria-label="Zum Kontakt">Kontakt</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -51,22 +54,30 @@
             <h2>Blog</h2>
             <div class="blog-grid">
                 <article class="blog-post animated-element" data-preview="Ein leckerer Spargel-Salat!">
-                    <img src="./assets/happy spoons.jpg" alt="Blogbeitrag: Rezept für Spargel-Salat mit Erdbeeren und Balsamico.">
-                    <h3><a href="#blog-content-1" class="blog-link">Spargel-Salat mit Erdbeeren und Balsamico</a></h3>
+                    <div class="blog-post-inner">
+                        <img src="./assets/happy spoons.jpg" alt="Blogbeitrag: Rezept für Spargel-Salat mit Erdbeeren und Balsamico.">
+                        <h3><a href="#blog-content-1" class="blog-link">Spargel-Salat mit Erdbeeren und Balsamico</a></h3>
+                    </div>
                 </article>
                 <article class="blog-post animated-element" data-preview="Fruchtiger Rhabarber-Crumble!">
-                    <img src="./assets/happy spoons.jpg" alt="Blogbeitrag: Rezept für Rhabarber-Crumble mit Vanillesauce.">
-                    <h3><a href="#blog-content-2" class="blog-link">Rhabarber-Crumble mit Vanillesauce</a></h3>
+                    <div class="blog-post-inner">
+                        <img src="./assets/happy spoons.jpg" alt="Blogbeitrag: Rezept für Rhabarber-Crumble mit Vanillesauce.">
+                        <h3><a href="#blog-content-2" class="blog-link">Rhabarber-Crumble mit Vanillesauce</a></h3>
+                    </div>
                 </article>
             </div>
 
             <div id="blog-content-1" class="blog-content">
-                <h2>Spargel-Salat mit Erdbeeren und Balsamico</h2>
-                <p>Hier kommt das Rezept für den Spargel-Salat...</p>
+                <div class="blog-content-inner">
+                    <h2>Spargel-Salat mit Erdbeeren und Balsamico</h2>
+                    <p>Hier kommt das Rezept für den Spargel-Salat...</p>
+                </div>
             </div>
             <div id="blog-content-2" class="blog-content">
-                <h2>Rhabarber-Crumble mit Vanillesauce</h2>
-                <p>Hier kommt das Rezept für den Rhabarber-Crumble...</p>
+                <div class="blog-content-inner">
+                    <h2>Rhabarber-Crumble mit Vanillesauce</h2>
+                    <p>Hier kommt das Rezept für den Rhabarber-Crumble...</p>
+                </div>
             </div>
         </section>
 
