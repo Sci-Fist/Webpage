@@ -29,7 +29,7 @@ body {
 
 /* Intro Section */
 .intro {
-    background-image: url('/assets/hero-image.jpg');
+    background-image: url('/assets/hero-image.jpg'); /* Placeholder - replace with your actual hero image */
     background-size: cover;
     background-position: center;
     color: white;
