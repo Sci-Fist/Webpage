@@ -25,11 +25,13 @@ const observer = new IntersectionObserver(entries => {
 const animatedElements = document.querySelectorAll('.animated-element');
 animatedElements.forEach(element => observer.observe(element));
 
-// Show/hide blog content (simplified)
-document.querySelectorAll('.blog-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const blogContent = this.nextElementSibling;
-        blogContent.classList.toggle('show');
+// Show/hide blog content on hover (updated)
+document.querySelectorAll('.blog-post').forEach(post => {
+    post.addEventListener('mouseover', function() {
+        this.querySelector('.blog-content').classList.add('show');
+    });
+    post.addEventListener('mouseout', function() {
+        this.querySelector('.blog-content').classList.remove('show');
     });
 });
+
