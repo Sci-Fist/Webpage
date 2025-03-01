@@ -143,14 +143,15 @@ section {
 }
 
 /* Styles for headings */
-h1, h2 {
+h1, h2, h3 { /* Added h3 to style subheadings */
     font-weight: 700;
     margin-bottom: 1rem;
     color: #333;
     text-align: center;
-    font-family: 'Lora', serif;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    font-family: 'UniSpace', sans-serif; /* Using UniSpace font */
     animation: fadeIn 1s ease-in-out forwards;
+    position: relative; /* Added for sticky positioning */
+    z-index: 10; /* Ensure headers are on top */
 }
 
 h1 {
@@ -159,6 +160,10 @@ h1 {
 
 h2 {
     font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.5rem;
 }
 
 /* Styles for portfolio and blog grids */
@@ -189,6 +194,9 @@ h2 {
     h2 {
         font-size: 1.5rem;
     }
+    h3 {
+        font-size: 1.2rem;
+    }
     .intro {
         padding: 50px 0;
     }
@@ -216,6 +224,9 @@ h2 {
     }
     h2 {
         font-size: 1.3rem;
+    }
+    h3 {
+        font-size: 1rem;
     }
 }
 
@@ -376,6 +387,8 @@ nav {
     --primary-color: #e0f7fa; /* Light blue */
     --secondary-color: #222; /* Dark gray */
     --accent-color: #b2ebf2; /* Lighter blue */
+    --text-color: #333; /* Dark gray text */
+    --background-color: #f8f8f8; /* Light gray background */
 }
 
 /* Apply color palette */
@@ -403,5 +416,14 @@ nav a:hover {
 
 footer {
     background-color: var(--secondary-color);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+h1, h2, h3 {
+    color: var(--text-color);
 }
 
