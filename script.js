@@ -22,6 +22,8 @@ animatedElements.forEach(element => observer.observe(element));
 //Improved Tooltip Function
 const createTooltip = (element, tooltipClass) => {
     const tooltip = element.querySelector(`.${tooltipClass}`);
+    if (!tooltip) return; // Handle cases where tooltip might be missing
+
     let timeoutId;
 
     element.addEventListener('mouseover', () => {
