@@ -1,6 +1,9 @@
 export const handleBackToTop = () => {
     const backToTopButton = document.getElementById('backToTop');
-    if (!backToTopButton) return;
+    if (!backToTopButton) {
+        console.error("Back to top button element not found!");
+        return;
+    }
 
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 300) {
