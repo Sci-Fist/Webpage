@@ -281,7 +281,7 @@ footer {
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
 /* Blog Content Styles */
-.blog-content {
+.blog-content, .portfolio-content {
     display: none;
     position: absolute;
     bottom: 100%;
@@ -299,12 +299,12 @@ footer {
     transition: opacity 0.3s ease;
 }
 
-.blog-content.show {
+.blog-content.show, .portfolio-content.show {
     display: block;
     opacity: 1;
 }
 
-.blog-post:hover .blog-content {
+.blog-post:hover .blog-content, .portfolio-item:hover .portfolio-content {
     display: block;
     opacity: 1;
 }

@@ -26,16 +26,19 @@ const animatedElements = document.querySelectorAll('.animated-element');
 animatedElements.forEach(element => observer.observe(element));
 
 // Show/hide blog content on hover (updated with delay)
-document.querySelectorAll('.blog-post').forEach(post => {
+const showTooltip = (element, tooltipClass) => {
     let timeoutId;
-    post.addEventListener('mouseover', function() {
+    element.addEventListener('mouseover', function() {
         timeoutId = setTimeout(() => {
-            this.querySelector('.blog-content').classList.add('show');
+            this.querySelector(`.${tooltipClass}`).classList.add('show');
         }, 200); // 200ms delay
     });
-    post.addEventListener('mouseout', function() {
+    element.addEventListener('mouseout', function() {
         clearTimeout(timeoutId);
-        this.querySelector('.blog-content').classList.remove('show');
+        this.querySelector(`.${tooltipClass}`).classList.remove('show');
     });
-});
+};
+
+document.querySelectorAll('.blog-post').forEach(post => showTooltip(post, 'blog-content'));
+document.querySelectorAll('.portfolio-item').forEach(item => showTooltip(item, 'portfolio-content'));
 
