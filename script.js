@@ -29,8 +29,23 @@ animatedElements.forEach(element => observer.observe(element));
 document.querySelectorAll('.blog-link').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        document.querySelectorAll('.blog-content').forEach(content => content.classList.remove('show'));
-        document.getElementById(targetId).classList.add('show');
+        const blogPost = this.parentElement.parentElement;
+        const blogContent = blogPost.querySelector('.blog-content');
+        if (blogContent) {
+            blogContent.classList.toggle('show');
+        }
     });
 });
+
+// Add event listeners for read more buttons in previews
+document.querySelectorAll('.blog-post').forEach(post => {
+    const readMoreButton = post.querySelector('.read-more-button');
+    if (readMoreButton) {
+        readMoreButton.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent the link from triggering
+            const blogContent = post.nextElementSibling;
+            blogContent.classList.add('show');
+        });
+    }
+});
+
