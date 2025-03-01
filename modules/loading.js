@@ -6,20 +6,30 @@ export const handleLoadingIndicator = () => {
     }
 
     const images = document.querySelectorAll('img');
-    let visibleImages = 0;
+    let loadedImages = 0;
+    const totalImages = images.length;
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                visibleImages++;
-                if (visibleImages === images.length) {
-                    removeLoadingIndicator();
-                }
-            }
-        });
-    }, { threshold: 0.5 }); // Adjust threshold as needed
+    if (totalImages === 0) {
+        removeLoadingIndicator();
+        return;
+    }
 
-    images.forEach(img => observer.observe(img));
+    images.forEach(img => {
+        img.onload = () => {
+            loadedImages++;
+            checkAllLoaded();
+        };
+        img.onerror = () => {
+            loadedImages++;
+            checkAllLoaded();
+        };
+    });
+
+    function checkAllLoaded() {
+        if (loadedImages === totalImages) {
+            removeLoadingIndicator();
+        }
+    }
 
     function removeLoadingIndicator() {
         loadingIndicator.style.display = 'none';
