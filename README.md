@@ -1,12 +1,12 @@
 # Meine Koch-Website
 
-Ich bin ein Koch, der sich auf [Ort einfügen, z.B. München] auf Mietkoch-Basis spezialisiert hat.  Meine Leidenschaft liegt in der Zubereitung regionaler und nachhaltiger Menüs.
+Ich bin ein Koch, der sich auf München auf Mietkoch-Basis spezialisiert hat.  Meine Leidenschaft liegt in der Zubereitung regionaler und nachhaltiger Menüs.
 
 **Meine Angebote:**
 
-*   **Regionale Küche:** Ich verwende hauptsächlich saisonale und regionale Zutaten von lokalen Erzeugern.  [Optional:  Beispiele für verwendete Zutaten nennen]
-*   **Nachhaltigkeit:**  Nachhaltigkeit ist mir ein wichtiges Anliegen. Ich achte auf umweltschonende Zubereitung und Verpackung, verwende nachhaltige Verpackungsmaterialien und reduziere Food Waste. [Optional:  Konkrete Beispiele für nachhaltige Praktiken nennen]
-*   **Individuelle Menüs:** Ich erstelle gerne individuelle Menüs nach Ihren Wünschen und Bedürfnissen.  Beispiele für Menü-Kategorien: vegetarisch, vegan, glutenfrei, Allergiker-freundlich. [Optional:  Bilder von Beispielmenüs einfügen]
+*   **Regionale Küche:** Ich verwende hauptsächlich saisonale und regionale Zutaten von lokalen Erzeugern.  Beispiele:  Spargel aus dem Erdinger Land, Kartoffeln aus dem Hallertau, Kräuter aus dem eigenen Garten.
+*   **Nachhaltigkeit:**  Nachhaltigkeit ist mir ein wichtiges Anliegen. Ich achte auf umweltschonende Zubereitung und Verpackung, verwende nachhaltige Verpackungsmaterialien und reduziere Food Waste.  Beispiel:  Verwendung von Mehrwegbehältern, Kompostierung von Lebensmittelabfällen.
+*   **Individuelle Menüs:** Ich erstelle gerne individuelle Menüs nach Ihren Wünschen und Bedürfnissen.  Beispiele für Menü-Kategorien: vegetarisch, vegan, glutenfrei, Allergiker-freundlich.
 
 **Kontakt:**
 
@@ -15,7 +15,7 @@ Ich bin ein Koch, der sich auf [Ort einfügen, z.B. München] auf Mietkoch-Basis
 
 **Website:**
 
-[Link zur Website einfügen, falls vorhanden, z.B.  www.example.com]
+www.example.com (replace with your actual website address)
 
 **Technologien:**
 
