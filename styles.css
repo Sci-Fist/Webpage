@@ -253,7 +253,7 @@ footer {
     border-radius: 8px;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    white-space: pre-wrap; /* Allow text wrapping */
+    white-space: pre-wrap;
     z-index: 1;
     max-width: 300px;
     left: 50%;
@@ -267,7 +267,7 @@ footer {
 
 .blog-post:hover::before {
     opacity: 1;
-    transform: translateX(-50%) translateY(-110px); /* Adjust position on hover */
+    transform: translateX(-50%) translateY(-110px);
 }
 
 .blog-post:hover::before button {
