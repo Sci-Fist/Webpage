@@ -1,5 +1,5 @@
 body {
-    font-family: 'Lora', serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -7,8 +7,6 @@ body {
     color: #eee; /* Light text color */
     transition: background-color 0.3s ease;
 }
-
-/* Removed @font-face rule - use a link to Google Fonts instead */
 
 header {
     background-color: #282828;
