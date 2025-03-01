@@ -24,3 +24,4 @@ const observer = new IntersectionObserver(entries => {
 
 const animatedElements = document.querySelectorAll('.animated-element');
 animatedElements.forEach(element => observer.observe(element));
+
