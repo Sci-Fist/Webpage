@@ -25,3 +25,12 @@ const observer = new IntersectionObserver(entries => {
 const animatedElements = document.querySelectorAll('.animated-element');
 animatedElements.forEach(element => observer.observe(element));
 
+// Show/hide blog content
+document.querySelectorAll('.blog-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        document.querySelectorAll('.blog-content').forEach(content => content.classList.remove('show'));
+        document.getElementById(targetId).classList.add('show');
+    });
+});
