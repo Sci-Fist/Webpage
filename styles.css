@@ -5,23 +5,53 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #121212; /* Darker background */
-    color: #d3d3d3; /* Lighter, more elegant text color */
+    background-color: #121212;
+    color: #d3d3d3;
     transition: background-color 0.3s ease;
     display: flex;
     flex-direction: column;
-    font-weight: 300; /* Slightly lighter font weight for better readability */
+    font-weight: 300;
+}
+
+/* Intro Section */
+#intro {
+    background-image: url('../assets/background-image.jpg'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.intro-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta-button {
+    background-color: #f0c808;
+    color: #121212;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e0b808;
 }
 
 /* Styles for the header */
 header {
-    background-color: #1a1a1a; /* Slightly lighter header for contrast */
+    background-color: #1a1a1a;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2rem 4rem;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Increased shadow for depth */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Styles for navigation links */
@@ -42,8 +72,8 @@ nav a {
 }
 
 nav a:hover {
-    color: #121212; /* Darker text on hover */
-    background-color: #f0c808; /* Gold hover color */
+    color: #121212;
+    background-color: #f0c808;
     border-color: #f0c808;
 }
 
@@ -64,10 +94,10 @@ section {
 h1, h2 {
     font-weight: 700;
     margin-bottom: 1.5rem;
-    color: #f0f0f0; /* Lighter heading color */
+    color: #f0f0f0;
     text-align: center;
     font-family: 'Lora', serif;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* Subtle text shadow for elegance */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 h1 {
@@ -83,10 +113,10 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 3rem;
-    background-color: #1a1a1a; /* Slightly lighter grid background */
+    background-color: #1a1a1a;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Added box shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive adjustments */
@@ -104,8 +134,8 @@ h2 {
 
 /* Styles for portfolio items and blog posts */
 .portfolio-item, .blog-post {
-    background-color: #222; /* Slightly darker item background */
-    border: 1px solid #333; /* Darker border */
+    background-color: #222;
+    border: 1px solid #333;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -127,9 +157,16 @@ h2 {
     object-fit: cover;
 }
 
+.details-link {
+    display: block;
+    margin-top: 1rem;
+    color: #f0c808;
+    text-decoration: none;
+}
+
 /* Styles for the footer */
 footer {
-    background-color: #1a1a1a; /* Slightly lighter footer */
+    background-color: #1a1a1a;
     padding: 1rem;
     text-align: center;
     color: #aaa;
@@ -152,4 +189,3 @@ footer {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
-
