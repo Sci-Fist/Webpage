@@ -28,3 +28,4 @@ try {
     errorContainer.innerHTML = `<p>${errorMessage}</p>`;
     document.body.appendChild(errorContainer);
 }
+
