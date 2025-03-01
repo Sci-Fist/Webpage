@@ -13,6 +13,9 @@ body {
     font-weight: 300;
     overflow-x: hidden;
     font-size: 16px;
+    background-image: url('/assets/nature-background.jpg'); /*Nature background image*/
+    background-size: cover;
+    background-attachment: fixed; /*Keeps background fixed on scroll*/
 }
 
 /* Animations */
@@ -85,7 +88,7 @@ body {
 
 /* Header */
 header {
-    background-color: #8FBC8F;
+    background-color: #558B2F; /*Keeps top bar green*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -440,3 +443,14 @@ h1, h2, h3 {
     transform: scale(1.05); /* Subtle hover effect */
 }
 
+/* Tooltips */
+.portfolio-content, .blog-content {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Prevent accidental clicks */
+}
+
+.portfolio-content.show, .blog-content.show {
+    opacity: 1;
+    pointer-events: auto;
+}
