@@ -1,5 +1,10 @@
 export const handleNavigation = () => {
     const navLinks = document.querySelectorAll(".nav a");
+    if (!navLinks.length) {
+        console.warn("No navigation links found!");
+        return;
+    }
+
     navLinks.forEach((link) => {
         link.addEventListener("click", function (event) {
             event.preventDefault();
@@ -10,7 +15,7 @@ export const handleNavigation = () => {
             } else {
                 console.warn(`Navigation link target not found: #${targetId}`);
             }
-            link.setAttribute("aria-label", `Navigate to ${link.textContent}`);
+            //The aria-label is already set correctly in the HTML, no need to set it here again.
         });
     });
 
