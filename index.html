@@ -14,7 +14,7 @@
     </div>
     <header class="header">
         <a href="#" class="header__logo">
-            <img src="assets/happy spoons.jpg" alt="Culinaut Logo">
+            <img src="assets/happy spoons.jpg" alt="Culinaut Logo: Happy Spoons" loading="lazy">
         </a>
         <h1 class="header__title">Culinaut</h1>
         <nav class="nav" aria-label="Hauptnavigation" role="navigation">
@@ -29,63 +29,76 @@
     </header>
 
     <main>
-        <section id="vorstellung" class="intro animated-element">
-            <div class="intro-content">
+        <article id="vorstellung" class="intro animated-element">
+            <div class="intro__content">
                 <h2>Willkommen!</h2>
                 <p>Culinaut – Chefkoch und Food-Fotograf mit Fokus auf nachhaltige Küche. Essen, das so gut aussieht, wie es schmeckt.</p>
                 <a href="#portfolio" class="cta-button">Meine Menüs ansehen</a>
             </div>
-        </section>
+        </article>
 
-        <section id="portfolio" class="portfolio-grid animated-element">
+        <article id="portfolio" class="portfolio-grid animated-element">
             <h2>Portfolio</h2>
-            <div class="portfolio-grid-inner">
+            <div class="portfolio__inner">
                 <article class="portfolio-item portfolio-item--spring animated-element">
-                    <img src="assets/portfolio1.jpg" alt="A light and fresh spring menu with seasonal ingredients such as asparagus, strawberries, and rhubarb.">
+                    <img src="assets/portfolio1.jpg" alt="A light and fresh spring menu with seasonal ingredients such as asparagus, strawberries, and rhubarb." loading="lazy">
                     <h3>Frühlingsmenü</h3>
                     <div class="portfolio-content">
                         <p>Leichte und frische Gerichte mit Spargel, Erdbeeren und Rhabarber. Perfekt für ein besonderes Abendessen.</p>
                     </div>
                 </article>
                 <article class="portfolio-item portfolio-item--summer animated-element">
-                    <img src="assets/portfolio2.jpg" alt="A delicious summer barbecue menu featuring grilled vegetables and sustainable meats.">
+                    <img src="assets/portfolio2.jpg" alt="A delicious summer barbecue menu featuring grilled vegetables and sustainable meats." loading="lazy">
                     <h3>Sommer-Grillmenü</h3>
                     <div class="portfolio-content">
                         <p>Köstliches Grillmenü für warme Sommerabende mit gegrilltem Gemüse und nachhaltigem Fleisch. Perfekt für eine entspannte Grillparty.</p>
                     </div>
                 </article>
             </div>
-        </section>
+        </article>
 
-        <section id="blog" class="blog-grid animated-element">
+        <article id="blog" class="blog-grid animated-element">
             <h2>Blog</h2>
-            <div class="blog-grid-inner">
+            <div class="blog__inner">
                 <article class="blog-post animated-element">
-                    <img src="assets/blog1.jpg" alt="Blog post: Recipe for asparagus salad with strawberries and balsamic vinegar.">
+                    <img src="assets/blog1.jpg" alt="Blog post: Recipe for asparagus salad with strawberries and balsamic vinegar." loading="lazy">
                     <h3><a href="blogposts/blog-post1.html" class="blog-link">Spargel-Salat mit Erdbeeren und Balsamico</a></h3>
                     <div class="blog-tooltip">
                         <p>Tooltip content for Spargel-Salat</p>
                     </div>
                 </article>
                 <article class="blog-post animated-element">
-                    <img src="assets/blog2.jpg" alt="Blog post: Recipe for rhubarb crumble with vanilla sauce.">
+                    <img src="assets/blog2.jpg" alt="Blog post: Recipe for rhubarb crumble with vanilla sauce." loading="lazy">
                     <h3><a href="blogposts/blog-post2.html" class="blog-link">Rhabarber-Crumble mit Vanillesauce</a></h3>
                     <div class="blog-tooltip">
                         <p>Tooltip content for Rhabarber-Crumble</p>
                     </div>
                 </article>
             </div>
-        </section>
+        </article>
 
-        <section id="kontakt" class="animated-element">
+        <article id="kontakt" class="animated-element">
             <h2>Kontakt</h2>
-            <p>Email: [Ihre E-Mail-Adresse]<br>Telefon: [Ihre Telefonnummer]</p>
-            <p>Adresse: [Ihre Adresse]</p>
-        </section>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Nachricht:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Senden</button>
+            </form>
+            <p>Email: <span id="emailPlaceholder">[Ihre E-Mail-Adresse]</span><br>Telefon: <span id="phonePlaceholder">[Ihre Telefonnummer]</span></p>
+            <p>Adresse: <span id="addressPlaceholder">[Ihre Adresse]</span></p>
+        </article>
     </main>
 
     <footer class="footer">
         <p class="footer__copyright">&copy; 2024 Culinaut</p>
     </footer>
+    <button id="backToTop">Back to Top</button>
 </body>
 </html>
