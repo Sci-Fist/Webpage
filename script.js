@@ -36,7 +36,10 @@ const createTooltip = (element, tooltipClass) => {
     });
 };
 
-// Attach tooltips
-document.querySelectorAll('.blog-post').forEach(post => createTooltip(post, 'blog-content'));
-document.querySelectorAll('.portfolio-item').forEach(item => createTooltip(item, 'portfolio-content'));
+// Attach tooltips - Ensure tooltips are only added once
+const blogPosts = document.querySelectorAll('.blog-post');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+blogPosts.forEach(post => createTooltip(post, 'blog-content'));
+portfolioItems.forEach(item => createTooltip(item, 'portfolio-content'));
 
