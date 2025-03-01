@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 500); // Adjust delay as needed
     }
 
-    const navLinks = document.querySelectorAll('.nav a'); // More specific selector
+    const navLinks = document.querySelectorAll('.nav a');
     navLinks.forEach(link => {
         link.addEventListener('click', function(event) {
             event.preventDefault();
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const createTooltip = (element, tooltipClass) => {
         const tooltip = element.querySelector(`.${tooltipClass}`);
-        if (!tooltip) return; // Handle cases where tooltip might be missing
+        if (!tooltip) return;
 
         let timeoutId;
 
@@ -36,14 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Attach tooltips - Ensure tooltips are only added once
     const blogPosts = document.querySelectorAll('.blog-post');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
 
     blogPosts.forEach(post => createTooltip(post, 'blog-tooltip'));
     portfolioItems.forEach(item => createTooltip(item, 'portfolio-content'));
 
-    // Animations on scroll
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
