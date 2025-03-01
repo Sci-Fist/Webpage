@@ -15,7 +15,7 @@ body {
     background-color: #f8f5f0; /* Off-white/Cream */
     color: #544e47;       /* Dark Brown/Olive */
     overflow-x: hidden; /* Prevent horizontal scroll */
-    background-image: url('path/to/your/linen-texture.png'); /* Replace with your texture image */
+    background-image: url('assets/linen-texture.png'); /* Replace with your texture image */
     background-repeat: repeat;
 }
 
@@ -70,7 +70,7 @@ nav a.active {
 
 /* Header / Hero Section */
 header {
-    background: url('path/to/your/hero-image.jpg') no-repeat center center/cover; /* Replace with your image */
+    background: url('assets/hero-image.jpg') no-repeat center center/cover; /* Replace with your image */
     color: #f8f5f0; /* Adjust text color if needed for image contrast */
     text-align: center;
     padding: 150px 20px;
