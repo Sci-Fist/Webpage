@@ -5,8 +5,8 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #f5f5f5; /* Example light background color */
-    color: #333; /* Example dark text color */
+    background-color: #f8f8f8; /* Light gray background */
+    color: #333; /* Dark gray text */
     transition: background-color 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -14,11 +14,11 @@ body {
 
 /* Styles for the header */
 header {
-    background-color: #333; /* Example dark background color */
+    background-color: #222; /* Dark gray header */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem; /* Adjusted padding */
+    padding: 1rem 2rem;
     text-align: center;
 }
 
@@ -31,15 +31,15 @@ nav {
 nav a {
     margin: 0 1rem;
     text-decoration: none;
-    color: #f5f5f5; /* Example light text color */
+    color: #fff; /* White text for nav links */
     font-weight: bold;
-    font-size: 1rem; /* Example font size */
+    font-size: 1rem;
     transition: color 0.3s ease;
 }
 
 /* Hover effect for navigation links */
 nav a:hover {
-    color: #bada55;
+    color: #f0c808; /* Gold hover color */
 }
 
 /* Styles for the main content area */
@@ -47,7 +47,7 @@ main {
     max-width: 960px;
     padding: 0 2rem;
     margin: 2rem auto;
-    flex: 1; /* Added flex: 1 to allow main content to take up available space */
+    flex: 1;
 }
 
 /* Styles for sections */
@@ -59,11 +59,12 @@ section {
 h1, h2 {
     font-weight: 700;
     margin-bottom: 1rem;
+    color: #222; /* Dark gray headings */
 }
 
 /* Styles for h1 headings */
 h1 {
-    font-size: 3rem; /* Example font size */
+    font-size: 3rem;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -71,7 +72,7 @@ h1 {
 
 /* Styles for h2 headings */
 h2 {
-    font-size: 2rem; /* Example font size */
+    font-size: 2rem;
 }
 
 /* Styles for portfolio and blog grids */
@@ -101,23 +102,22 @@ h2 {
 /* Media query for screens smaller than 500px */
 @media (max-width: 500px) {
     h1 {
-        font-size: 1.8rem; /* Adjust font size for smaller screens */
+        font-size: 1.8rem;
     }
     .portfolio-item, .blog-post {
-        padding: 1rem; /* Reduce padding for smaller screens */
+        padding: 1rem;
     }
 }
 
-
 /* Styles for portfolio items and blog posts */
 .portfolio-item, .blog-post {
-    background-color: #fff; /* Example light background color */
-    border: 1px solid #ccc;
+    background-color: #fff; /* White background for items */
+    border: 1px solid #ddd; /* Light gray border */
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    margin-bottom: 2rem; /* Added margin for better spacing between items */
+    margin-bottom: 2rem;
     text-align: center;
 }
 
@@ -137,15 +137,16 @@ h2 {
 
 /* Styles for the footer */
 footer {
-    background-color: #333; /* Example dark background color */
+    background-color: #222; /* Dark gray footer */
     padding: 1rem;
     text-align: center;
+    color: #fff; /* White text for footer */
 }
 
 /* Added classes for better structure */
 .header__title {
     margin: 0;
-    font-size: 2.5rem; /* Example font size */
+    font-size: 2.5rem;
 }
 
 .nav__link {
@@ -154,16 +155,18 @@ footer {
 
 .footer__copyright {
     margin: 0;
-    font-size: 0.8rem; /* Example font size */
+    font-size: 0.8rem;
 }
 
 /* Added styles for portfolio items */
 .portfolio-item--spring {
-    background-color: #333;
+    background-color: #f0c808; /* Gold background for spring items */
+    color: #222; /* Dark gray text for spring items */
 }
 
 .portfolio-item--summer {
-    background-color: #444;
+    background-color: #4CAF50; /* Green background for summer items */
+    color: #fff; /* White text for summer items */
 }
 
 /* Add Google Fonts link */
